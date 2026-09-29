@@ -1,0 +1,117 @@
+[
+  {
+    "slug": "ekoroji",
+    "title": "EKOROJI",
+    "subtitle": "Cuisine de saison, sensibilisation et gestes simples contre le gaspillage alimentaire.",
+    "role": "Lead Dev & UI Designer",
+    "duration": "Oct — Déc 2024",
+    "technologies": ["React", "Node.js", "PostgreSQL"],
+    "type": "Application Web",
+    "image_hero": "assets/images/Ekoroji_index_2.png",
+    "image_banner": "assets/images/download.gif",
+    "image_context": "assets/images/Ekoroji_waste_new.png",
+    "metrics": [
+      {"value": "24%", "label": "de pertes alimentaires en moins pendant la phase pilote."},
+      {"value": "48ms", "label": "de temps de réponse moyen sur les pages principales."},
+      {"value": "95%", "label": "de retours positifs recueillis auprès des utilisateurs."}
+    ],
+    "context": "Les équipes et les particuliers ont souvent envie de cuisiner plus responsable, mais manquent de temps pour trouver des recettes adaptées à leurs produits et à leur calendrier. EKOROJI rassemble des idées de saison, des conseils pratiques et des ressources autour de l'anti-gaspillage. L'enjeu était de transformer une intention écologique en gestes accessibles, sans ajouter de complexité au quotidien.",
+    "challenge": "Rendre de nombreuses ressources immédiatement compréhensibles sans transformer la page en catalogue dense. Chaque écran devait guider vers une action utile tout en gardant une identité éditoriale chaleureuse.",
+    "solution": "J'ai travaillé la hiérarchie des contenus, réduit les étapes de navigation et conçu des composants lisibles sur mobile. La performance et la réutilisation des composants ont été intégrées dès la conception.",
+    "approach": [
+      {"title": "Composants React", "description": "Des blocs d'interface réutilisables pour garder une expérience cohérente et faciliter les évolutions."},
+      {"title": "Architecture claire", "description": "Une séparation nette entre présentation, accès aux données et règles métier."},
+      {"title": "Indexation & cache", "description": "Des requêtes ciblées et des contenus mis en cache pour réduire l'attente."}
+    ],
+    "code_snippet": "const suggestRecipes = (ingredients, recipes) => {\n  const available = new Set(ingredients.map((item) => item.name));\n  return recipes\n    .map((recipe) => ({\n      ...recipe,\n      match: recipe.ingredients.filter((name) => available.has(name)).length\n    }))\n    .sort((a, b) => b.match - a.match);\n};",
+    "next_project_slug": "marmiton-numerique"
+  },
+  {
+    "slug": "marmiton-numerique",
+    "title": "Le Marmiton Numérique",
+    "subtitle": "Une gestion de stocks plus fine pour imaginer des menus de saison sans perdre une miette.",
+    "role": "Développeuse Fullstack & Lead Architect",
+    "duration": "Projet pilote · 2025",
+    "technologies": ["React", "NestJS", "PostgreSQL", "Tailwind"],
+    "type": "Application Web · Foodtech",
+    "image_hero": null,
+    "image_context": null,
+    "metrics": [],
+    "context": "En restauration, les informations de stock se dispersent vite entre les commandes, les réserves et les menus. Il devient difficile de savoir quoi utiliser en priorité et d'ajuster les quantités au bon moment. Le Marmiton Numérique centralise les produits, leur disponibilité et leur date limite afin d'aider les équipes à anticiper leurs besoins et à composer leurs menus avec plus de précision.",
+    "challenge": "Garder les stocks fiables sans ralentir le travail en cuisine. Une interface trop détaillée coûte du temps ; une interface trop simple masque les dates et quantités critiques.",
+    "solution": "Mettre en avant les informations qui changent la décision : urgence, quantité et possibilité d'intégration à un menu. Les mises à jour restent courtes et les règles métier sont contrôlées côté API.",
+    "approach": [
+      {"title": "Interface React", "description": "Des vues réutilisables et des états visuels clairs pour consulter et mettre à jour les produits."},
+      {"title": "API NestJS", "description": "Des responsabilités séparées et des validations centralisées pour fiabiliser les mouvements de stock."},
+      {"title": "Indexation PostgreSQL", "description": "Des recherches efficaces sur les dates, catégories et niveaux de disponibilité."}
+    ],
+    "code_snippet": "type StockItem = {\n  name: string;\n  expiresAt: Date;\n  quantity: number;\n};\n\nconst prioritizeStock = (items: StockItem[]) =>\n  items\n    .filter((item) => item.quantity > 0)\n    .sort((a, b) => a.expiresAt.getTime() - b.expiresAt.getTime());",
+    "next_project_slug": "sapor"
+  },
+  {
+    "slug": "sapor",
+    "title": "Sapor — L'Éco-Calculateur",
+    "subtitle": "Comparer l'impact des ingrédients et imaginer des alternatives de saison sans sacrifier le goût.",
+    "role": "Développeuse Fullstack",
+    "duration": "Projet web · 2025",
+    "technologies": ["React", "NestJS", "PostgreSQL", "Tailwind"],
+    "type": "Application Web · Éco-conception",
+    "image_hero": null,
+    "image_context": null,
+    "metrics": [],
+    "context": "Les données environnementales sont souvent difficiles à relier aux choix du quotidien. Sapor propose de comparer l'empreinte carbone d'une recette et de découvrir des alternatives de saison dans une interface compréhensible.",
+    "challenge": "Présenter des données d'impact complexes sans donner une impression de précision trompeuse ni alourdir le parcours de comparaison.",
+    "solution": "Mettre les indicateurs en contexte, comparer les recettes côte à côte et présenter les alternatives avec des informations lisibles et utiles à la décision.",
+    "approach": [
+      {"title": "Comparaison lisible", "description": "Des indicateurs rapprochés des recettes pour visualiser l'écart d'impact."},
+      {"title": "API structurée", "description": "Une séparation claire entre calculs, données et composants de présentation."},
+      {"title": "Interface accessible", "description": "Une hiérarchie visuelle qui facilite la lecture des résultats et des alternatives."}
+    ],
+    "code_snippet": "const compareImpact = (recipe, alternative) => ({\n  difference: recipe.impact - alternative.impact,\n  reduction: Math.round(\n    ((recipe.impact - alternative.impact) / recipe.impact) * 100\n  )\n});",
+    "next_project_slug": "atelier"
+  },
+  {
+    "slug": "atelier",
+    "title": "Atelier",
+    "subtitle": "Un espace de travail léger pour rassembler idées, notes et avancées d'équipe.",
+    "role": "Développeuse Full Stack",
+    "duration": "Projet web · 2025",
+    "technologies": ["React", "Java", "SQL"],
+    "type": "Application Web · Collaboration",
+    "image_hero": null,
+    "image_context": null,
+    "metrics": [],
+    "context": "Les idées, notes et tâches d'un projet se retrouvent souvent dispersées entre plusieurs outils. Atelier réunit ces éléments dans un espace partagé et facile à parcourir.",
+    "challenge": "Conserver une interface simple tout en permettant à une équipe de suivre les notes et les avancées d'un projet.",
+    "solution": "Organiser le contenu en blocs courts et proposer un espace de travail centralisé, soutenu par une interface React et une persistance SQL.",
+    "approach": [
+      {"title": "Interface React", "description": "Des composants réutilisables pour organiser notes et espaces de projet."},
+      {"title": "Services Java", "description": "Une logique métier séparée pour gérer les données et les interactions."},
+      {"title": "Données SQL", "description": "Une structure relationnelle pour conserver les informations de façon cohérente."}
+    ],
+    "code_snippet": "const groupNotesByProject = (notes) =>\n  notes.reduce((groups, note) => {\n    const project = note.projectId;\n    groups[project] ??= [];\n    groups[project].push(note);\n    return groups;\n  }, {});",
+    "next_project_slug": "ambre-portfolio"
+  },
+  {
+    "slug": "ambre-portfolio",
+    "title": "Ambre — Portfolio",
+    "subtitle": "Une vitrine personnelle qui donne une place égale au caractère et à la lisibilité.",
+    "role": "Conception & développement",
+    "duration": "2026",
+    "technologies": ["HTML", "CSS", "JavaScript", "PHP"],
+    "type": "Site Web · Portfolio",
+    "image_hero": null,
+    "image_context": null,
+    "metrics": [],
+    "context": "Le portfolio devait présenter parcours, compétences et projets dans un univers éditorial cohérent, tout en restant rapide et confortable à consulter sur mobile.",
+    "challenge": "Construire une identité visuelle reconnaissable tout en évitant la duplication des pages et en gardant une navigation claire.",
+    "solution": "Un système de pages PHP composées à partir d'un header, d'un footer et d'un template de fiche projet réutilisables, avec les projets centralisés dans un fichier JSON.",
+    "approach": [
+      {"title": "Composants partagés", "description": "Un header et un footer communs pour toutes les pages du site."},
+      {"title": "Données centralisées", "description": "Une source JSON unique pour alimenter galerie et études de cas."},
+      {"title": "Design responsive", "description": "Une grille et une typographie adaptées aux différents formats d'écran."}
+    ],
+    "code_snippet": "<?php\n$projects = load_projects();\nforeach ($projects as $project) {\n    echo e($project['title']);\n}\n?>",
+    "next_project_slug": "ekoroji"
+  }
+]

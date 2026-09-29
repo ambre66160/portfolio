@@ -1,0 +1,223 @@
+.competences-page {
+    background: var(--color-cream);
+}
+
+.competences-main {
+    width: min(100%, 1440px);
+    margin-inline: auto;
+    padding: clamp(4.5rem, 8vw, 7.5rem) var(--page-gutter) clamp(5rem, 9vw, 8rem);
+}
+
+.competences-intro {
+    max-width: 55rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.competences-intro__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 1.25rem;
+    color: var(--color-wine);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.094em;
+    text-transform: uppercase;
+}
+
+.competences-intro__eyebrow span {
+    width: 1.7rem;
+    height: 1px;
+    background: var(--color-wine);
+}
+
+.competences-intro h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 7vw, 6.3rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.05;
+}
+
+.competences-intro h1 span {
+    color: var(--color-wine);
+}
+
+.competences-intro__text {
+    max-width: 39rem;
+    margin: 1.4rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.84rem;
+    line-height: 1.8;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    min-height: 17.5rem;
+    padding: 2rem;
+    border: 1px solid rgba(41, 25, 24, 0.055);
+    border-radius: 20px;
+    background: var(--color-white);
+    box-shadow: 0 16px 48px rgba(41, 25, 24, 0.05);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 52px rgba(41, 25, 24, 0.085);
+}
+
+.skill-card__header {
+    display: flex;
+    min-height: 3.5rem;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.skill-card__icon {
+    display: grid;
+    width: 3.25rem;
+    aspect-ratio: 1;
+    flex: none;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-skill-icon);
+    color: var(--color-wine);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.skill-card__icon--code {
+    font-family: monospace;
+    font-size: 1rem;
+    letter-spacing: -0.08em;
+}
+
+.skill-card__icon--frameworks {
+    font-size: 1.35rem;
+}
+
+.skill-card__icon--tools {
+    font-size: 1.35rem;
+}
+
+.skill-card__icon--soft {
+    font-size: 1.1rem;
+}
+
+.skill-card__header h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.2;
+}
+
+.skill-card__header h2 span {
+    white-space: nowrap;
+}
+
+.skill-card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-card__badges li {
+    display: inline-flex;
+    min-height: 2.45rem;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: var(--color-skill-badge);
+    color: var(--color-skill-text);
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+@media (max-width: 899px) {
+    .competences-main {
+        padding-top: 4rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+    }
+
+    .skill-card {
+        min-height: 0;
+        padding: 1.75rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .competences-main {
+        padding-top: 3.4rem;
+        padding-bottom: 5rem;
+    }
+
+    .competences-intro {
+        margin-bottom: 2rem;
+    }
+
+    .competences-intro h1 {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+    }
+
+    .competences-intro__text {
+        margin-top: 1rem;
+        font-size: 0.78rem;
+    }
+
+    .skill-card {
+        padding: 1.35rem;
+        border-radius: 16px;
+    }
+
+    .skill-card__header {
+        gap: 0.75rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .skill-card__icon {
+        width: 2.8rem;
+    }
+
+    .skill-card__header h2 {
+        font-size: 1.35rem;
+    }
+
+    .skill-card__badges {
+        gap: 0.5rem;
+    }
+
+    .skill-card__badges li {
+        min-height: 2.25rem;
+        padding: 0.45rem 0.8rem;
+        font-size: 0.66rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .competences-page *,
+    .competences-page *::before,
+    .competences-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

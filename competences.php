@@ -1,0 +1,23 @@
+<?php
+
+$page_active = 'competences';
+$page_title = 'Compétences — Ambre, Dev & Design';
+$page_description = 'Les compétences techniques et humaines d’Ambre : langages, frameworks, outils et savoir-être.';
+$body_class = 'competences-page';
+$page_styles = ['projets.css', 'competences.css'];
+require_once __DIR__ . '/includes/header.php';
+?>
+<main class="competences-main">
+    <section class="competences-intro" aria-labelledby="competences-title">
+        <p class="competences-intro__eyebrow"><span></span> Mon arsenal</p>
+        <h1 id="competences-title">Compétences et softskills<span>.</span></h1>
+        <p class="competences-intro__text">Des bases solides, des outils choisis avec soin et une façon de travailler attentive aux détails comme aux personnes.</p>
+    </section>
+    <section class="skills-grid" aria-label="Compétences techniques et humaines">
+        <article class="skill-card"><header class="skill-card__header"><span class="skill-card__icon skill-card__icon--code" aria-hidden="true">&lt;/&gt;</span><h2>Langages &amp; Fondations</h2></header><ul class="skill-card__badges" aria-label="Langages et fondations"><li>TypeScript</li><li>JavaScript ES6</li><li>Python</li><li>SQL</li><li>C++ / C</li></ul></article>
+        <article class="skill-card"><header class="skill-card__header"><span class="skill-card__icon skill-card__icon--frameworks" aria-hidden="true">▦</span><h2>Frameworks &amp; Librairies</h2></header><ul class="skill-card__badges" aria-label="Frameworks et librairies"><li>React.js</li><li>Next.js</li><li>NestJS</li><li>Node.js</li><li>Tailwind CSS</li></ul></article>
+        <article class="skill-card"><header class="skill-card__header"><span class="skill-card__icon skill-card__icon--tools" aria-hidden="true">⚙</span><h2>Outils &amp; Déploiement</h2></header><ul class="skill-card__badges" aria-label="Outils et déploiement"><li>Git &amp; GitHub</li><li>Docker</li><li>PostgreSQL</li><li>Figma</li><li>Linux / Bash</li></ul></article>
+        <article class="skill-card"><header class="skill-card__header"><span class="skill-card__icon skill-card__icon--soft" aria-hidden="true">♥</span><h2>Savoir-être <span>(Soft Skills)</span></h2></header><ul class="skill-card__badges" aria-label="Savoir-être"><li>Sens de l'esthétique</li><li>Rigueur d'artisan</li><li>Écoute active</li><li>Autonomie</li><li>Esprit d'équipe</li></ul></article>
+    </section>
+</main>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
