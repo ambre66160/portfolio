@@ -1,8 +1,8 @@
-import './layout.js';
-import './projects.js';
-import './project-detail.js';
-import './contact.js';
+import './layout.js?v=2';
+import './projects.js?v=2';
+import './project-detail.js?v=2';
+import './contact.js?v=2';
 
 if (document.querySelector('.hero')) {
-	import('./hero-animation.js');
+	import('./hero-animation.js?v=2');
 }

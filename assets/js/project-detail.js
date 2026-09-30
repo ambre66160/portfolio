@@ -1,4 +1,4 @@
-import { getProject } from './api.js';
+import { getProject } from './api.js?v=2';
 
 const node = (tag, className = '', text) => {
 	const result = document.createElement(tag);

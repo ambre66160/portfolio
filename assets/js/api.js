@@ -44,10 +44,12 @@ export async function getProjects() {
 	if (!projectsPromise) {
 		projectsPromise = (async () => {
 			try {
-				return await requestJson('api/projects.php');
+				return await requestJson('api/projects.php?v=2');
 			} catch (apiError) {
 				try {
-					const response = await fetch(new URL('config/projets.json', document.baseURI));
+					const dataUrl = new URL('config/projets.json', document.baseURI);
+					dataUrl.searchParams.set('v', '2');
+					const response = await fetch(dataUrl);
 					if (!response.ok) throw new Error('Les données statiques sont indisponibles.');
 					const projects = await response.json();
 					if (!Array.isArray(projects)) throw new Error('Le format des projets est invalide.');
