@@ -203,6 +203,21 @@
     box-shadow: 0 0 0 3px var(--color-contact-focus);
 }
 
+.contact-field input[aria-invalid="true"],
+.contact-field textarea[aria-invalid="true"] {
+    border-color: var(--color-wine);
+    box-shadow: 0 0 0 2px var(--color-contact-focus);
+}
+
+.contact-form.is-loading {
+    opacity: 0.72;
+}
+
+.contact-form__submit:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
 .contact-form__actions {
     display: flex;
     align-items: center;

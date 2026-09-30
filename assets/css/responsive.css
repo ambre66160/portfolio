@@ -164,6 +164,11 @@
 		font-size: clamp(6rem, 22vw, 10rem);
 	}
 
+	.hero__role {
+		margin-top: 0.8rem;
+		font-size: 0.58rem;
+	}
+
 	.hero__spark {
 		top: -1.4rem;
 		right: 0.2rem;
@@ -171,9 +176,11 @@
 	}
 
 	.hero__vertical {
-		font-size: 1rem;
-		top: calc(50% + 1rem);
-		right: calc(100% + 0.55rem);
+		top: calc(50% + 0.7rem);
+		right: calc(100% + 0.5rem);
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
 	}
 
 	.hero__version {
@@ -204,7 +211,13 @@
 
 	.about__layout {
 		grid-template-columns: 1fr;
-		gap: 1.5rem;
+		gap: 2.5rem;
+	}
+
+	.home-about__portrait {
+		width: min(100%, 25rem);
+		justify-self: center;
+		margin-right: 0.6rem;
 	}
 
 	.about__copy {
@@ -302,6 +315,10 @@
 
 	.hero__title {
 		font-size: 5.6rem;
+	}
+
+	.hero__role {
+		font-size: 0.52rem;
 	}
 
 	.hero__title-wrap {

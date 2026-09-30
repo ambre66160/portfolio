@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1e0b0b">
+    <meta name="description" content="Contactez Ambre pour une opportunité, un projet web ou une conversation autour du design et de l’architecture logicielle.">
+    <title>Contact — Ambre, Dev &amp; Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/projets.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <script type="module" src="assets/js/main.js"></script>
+</head>
+<body class="contact-page">
+<div data-site-header></div>
+<main class="contact-main">
+    <div class="contact-layout">
+        <section class="contact-column" aria-labelledby="contact-title">
+            <header class="contact-heading">
+                <p class="contact-heading__eyebrow"><span></span> Discutons de votre projet</p>
+                <h1 id="contact-title">Contactez-moi<span> !</span></h1>
+                <p>Une opportunité de stage, une idée de projet innovant ou simplement envie de parler design et architecture logicielle autour d'un bon café ? Envoyez-moi un message !</p>
+            </header>
+            <address class="contact-details" aria-label="Coordonnées directes">
+                <a class="contact-detail" href="mailto:ambre.florette@etu.cyu.fr"><span class="contact-detail__icon" aria-hidden="true">@</span><span><small>Email</small><strong>ambre.florette@etu.cyu.fr</strong></span></a>
+                <a class="contact-detail" href="tel:+33778947558"><span class="contact-detail__icon" aria-hidden="true">☎</span><span><small>Téléphone</small><strong>07 78 94 75 58</strong></span></a>
+                <div class="contact-detail"><span class="contact-detail__icon" aria-hidden="true">⌖</span><span><small>Localisation</small><strong>Pau, France — mobile</strong></span></div>
+            </address>
+            <form class="contact-form" id="contact-form" action="/api/contact.php" method="post">
+                <div class="contact-form__top"><h2>Votre message</h2><span>Les champs marqués * sont requis</span></div>
+                <p class="contact-form__feedback" id="contact-status" role="status" aria-live="polite" hidden></p>
+                <div class="contact-form__fields">
+                    <div class="contact-field"><label for="contact-name">Nom / Prénom <span>*</span></label><input id="contact-name" name="name" type="text" placeholder="Votre nom" autocomplete="name" maxlength="150" required></div>
+                    <div class="contact-field"><label for="contact-email">Adresse e-mail <span>*</span></label><input id="contact-email" name="email" type="email" placeholder="votre.email@exemple.com" autocomplete="email" maxlength="254" required></div>
+                    <div class="contact-field contact-field--full"><label for="contact-subject">Sujet</label><input id="contact-subject" name="subject" type="text" placeholder="Sujet de votre message" maxlength="180"></div>
+                    <div class="contact-field contact-field--full"><label for="contact-message">Message <span>*</span></label><textarea id="contact-message" name="message" rows="5" maxlength="8000" placeholder="Bonjour Ambre, je vous contacte pour..." required></textarea></div>
+                </div>
+                <div class="contact-form__actions"><button class="button contact-form__submit" type="submit">Envoyer le message <span aria-hidden="true">→</span></button></div>
+            </form>
+        </section>
+        <aside class="contact-socials" aria-labelledby="social-title">
+            <div class="contact-socials__heading"><p>En dehors de la boîte mail</p><h2 id="social-title">Retrouvons-nous<br>ailleurs<span>.</span></h2></div>
+            <div class="contact-socials__grid">
+                <a class="social-card" href="https://github.com/ambre_66160" target="_blank" rel="noreferrer"><span class="social-card__icon" aria-hidden="true">GH</span><span class="social-card__label">GitHub :</span><strong>ambre_66160</strong><span class="social-card__arrow" aria-hidden="true">↗</span></a>
+                <a class="social-card" href="https://www.instagram.com/ambre_33160/" target="_blank" rel="noreferrer"><span class="social-card__icon social-card__icon--instagram" aria-hidden="true">◎</span><span class="social-card__label">Instagram :</span><strong>ambre_33160</strong><span class="social-card__arrow" aria-hidden="true">↗</span></a>
+                <a class="social-card" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><span class="social-card__icon social-card__icon--linkedin" aria-hidden="true">in</span><span class="social-card__label">LinkedIn</span><strong>Profil professionnel</strong><span class="social-card__arrow" aria-hidden="true">↗</span></a>
+                <a class="social-card" href="mailto:ambre.florette@etu.cyu.fr?subject=Contact%20Discord" aria-label="Demander le contact Discord par e-mail"><span class="social-card__icon social-card__icon--discord" aria-hidden="true">♡</span><span class="social-card__label">Discord :</span><strong>Sur demande</strong><span class="social-card__arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <p class="contact-socials__note">Un projet en tête ? Je serai ravie d'en discuter avec vous.</p>
+        </aside>
+    </div>
+</main>
+<div data-site-footer></div>
+</body>
+</html>

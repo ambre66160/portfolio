@@ -263,6 +263,76 @@
     line-height: 1.65;
 }
 
+.project-highlights {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.7fr) minmax(0, 1.3fr);
+    align-items: center;
+    gap: 1.5rem 3rem;
+    margin: 1.2rem 0 clamp(5rem, 9vw, 8rem);
+    padding: 1.6rem 1.8rem;
+    border: 1px solid rgba(41, 25, 24, 0.055);
+    border-radius: 14px;
+    background: var(--color-white);
+}
+
+.project-highlights h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.project-highlights ul {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-highlights li {
+    position: relative;
+    padding-left: 1.1rem;
+    color: var(--color-muted);
+    font-size: 0.72rem;
+    line-height: 1.6;
+}
+
+.project-highlights li::before {
+    position: absolute;
+    left: 0;
+    color: var(--color-wine);
+    content: "+";
+    font-weight: 700;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.25rem 0 clamp(4rem, 7vw, 6rem);
+}
+
+.project-links a {
+    display: inline-flex;
+    min-height: 2.65rem;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--color-contact-border);
+    border-radius: 999px;
+    color: var(--color-wine);
+    font-size: 0.67rem;
+    font-weight: 700;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.project-links a:hover {
+    transform: translateY(-2px);
+    background: var(--color-white);
+}
+
 .project-context,
 .project-challenge {
     display: grid;
@@ -842,6 +912,15 @@
     .marmiton-board {
         right: 5%;
         width: min(57%, 36rem);
+    }
+}
+
+@media (max-width: 849px) {
+    .project-highlights {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.8rem;
+        margin-top: 1rem;
+        padding: 1.2rem;
     }
 }
 

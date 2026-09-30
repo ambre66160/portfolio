@@ -9,11 +9,13 @@
     "type": "Application Web",
     "image_hero": "assets/images/Ekoroji_index_2.png",
     "image_banner": "assets/images/download.gif",
+    "image_banner_webp": "assets/images/download.webp",
     "image_context": "assets/images/Ekoroji_waste_new.png",
-    "metrics": [
-      {"value": "24%", "label": "de pertes alimentaires en moins pendant la phase pilote."},
-      {"value": "48ms", "label": "de temps de réponse moyen sur les pages principales."},
-      {"value": "95%", "label": "de retours positifs recueillis auprès des utilisateurs."}
+    "metrics": [],
+    "highlights": [
+      "Suggestions de recettes à partir des ingrédients disponibles.",
+      "Contenus de saison et conseils anti-gaspillage réunis dans le parcours.",
+      "Interface responsive construite autour de composants réutilisables."
     ],
     "context": "Les équipes et les particuliers ont souvent envie de cuisiner plus responsable, mais manquent de temps pour trouver des recettes adaptées à leurs produits et à leur calendrier. EKOROJI rassemble des idées de saison, des conseils pratiques et des ressources autour de l'anti-gaspillage. L'enjeu était de transformer une intention écologique en gestes accessibles, sans ajouter de complexité au quotidien.",
     "challenge": "Rendre de nombreuses ressources immédiatement compréhensibles sans transformer la page en catalogue dense. Chaque écran devait guider vers une action utile tout en gardant une identité éditoriale chaleureuse.",
@@ -105,13 +107,16 @@
     "metrics": [],
     "context": "Le portfolio devait présenter parcours, compétences et projets dans un univers éditorial cohérent, tout en restant rapide et confortable à consulter sur mobile.",
     "challenge": "Construire une identité visuelle reconnaissable tout en évitant la duplication des pages et en gardant une navigation claire.",
-    "solution": "Un système de pages PHP composées à partir d'un header, d'un footer et d'un template de fiche projet réutilisables, avec les projets centralisés dans un fichier JSON.",
+    "solution": "Des pages HTML statiques consomment une API PHP JSON pour les projets et le contact. Les vues, les interactions client et les responsabilités serveur restent séparées.",
     "approach": [
       {"title": "Composants partagés", "description": "Un header et un footer communs pour toutes les pages du site."},
       {"title": "Données centralisées", "description": "Une source JSON unique pour alimenter galerie et études de cas."},
       {"title": "Design responsive", "description": "Une grille et une typographie adaptées aux différents formats d'écran."}
     ],
-    "code_snippet": "<?php\n$projects = load_projects();\nforeach ($projects as $project) {\n    echo e($project['title']);\n}\n?>",
+    "code_snippet": "const response = await fetch('/api/projects.php');\nconst { data: projects } = await response.json();\n\nconst title = document.createElement('h2');\ntitle.textContent = projects[0].title;",
+    "links": [
+      {"label": "Code source", "url": "https://github.com/ambre66160/portfolio"}
+    ],
     "next_project_slug": "ekoroji"
   }
 ]

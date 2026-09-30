@@ -734,6 +734,32 @@
     color: var(--color-project-green);
 }
 
+.contact-form__feedback.is-error {
+    background: var(--color-project-salmon);
+    color: var(--color-wine-dark);
+}
+
+.contact-form__feedback.is-success {
+    background: var(--color-project-sage);
+    color: var(--color-project-green);
+}
+
+.data-message {
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.projects__grid.is-loading,
+.projects-list.is-loading {
+    opacity: 0.62;
+}
+
+.projects__grid.is-error,
+.projects-list.is-error {
+    min-height: 5rem;
+}
+
 @media (max-width: 1023px) {
     .projects-nav {
         gap: 1rem;

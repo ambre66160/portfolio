@@ -1,17 +1,28 @@
-<?php
-
-$page_active = 'qui-suis-je';
-$page_title = 'Qui suis-je ? — Ambre, Dev & Design';
-$page_description = 'Découvrez le parcours, les valeurs et les passions d’Ambre, développeuse full stack.';
-$body_class = 'about-page';
-$page_styles = ['projets.css', 'qui-suis-je.css'];
-require_once __DIR__ . '/includes/header.php';
-?>
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1e0b0b">
+    <meta name="description" content="Découvrez le parcours, les valeurs et les passions d’Ambre, développeuse full stack.">
+    <title>Qui suis-je ? — Ambre, Dev &amp; Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/projets.css">
+    <link rel="stylesheet" href="assets/css/qui-suis-je.css">
+    <script type="module" src="assets/js/main.js"></script>
+</head>
+<body class="about-page">
+<div data-site-header></div>
 <main class="about-main">
     <section class="about-layout" aria-labelledby="about-title">
         <div class="about-layout__portrait-column">
             <figure class="about-portrait">
-                <img src="assets/images/femme.jpeg" alt="Portrait d'Ambre">
+                <img src="assets/images/femme.jpeg" alt="Portrait d'Ambre" loading="lazy" decoding="async">
                 <figcaption>Ambre <span>·</span> Dev &amp; Design</figcaption>
             </figure>
             <aside class="about-quote" aria-label="Une phrase qui me ressemble">
@@ -41,4 +52,6 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 </main>
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
+<div data-site-footer></div>
+</body>
+</html>
