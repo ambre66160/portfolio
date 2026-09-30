@@ -7,6 +7,8 @@ export class ApiError extends Error {
 	}
 }
 
+let projectsPromise;
+
 export async function requestJson(path, options = {}) {
 	const { headers = {}, ...fetchOptions } = options;
 	let response;
@@ -36,4 +38,38 @@ export async function requestJson(path, options = {}) {
 	}
 
 	return payload.data;
+}
+
+export async function getProjects() {
+	if (!projectsPromise) {
+		projectsPromise = (async () => {
+			try {
+				return await requestJson('api/projects.php');
+			} catch (apiError) {
+				try {
+					const response = await fetch(new URL('config/projets.json', document.baseURI));
+					if (!response.ok) throw new Error('Les données statiques sont indisponibles.');
+					const projects = await response.json();
+					if (!Array.isArray(projects)) throw new Error('Le format des projets est invalide.');
+					return projects;
+				} catch {
+					throw apiError;
+				}
+			}
+		})();
+	}
+
+	try {
+		return await projectsPromise;
+	} catch (error) {
+		projectsPromise = undefined;
+		throw error;
+	}
+}
+
+export async function getProject(slug) {
+	const projects = await getProjects();
+	const project = projects.find((item) => item.slug === slug);
+	if (!project) throw new ApiError('Ce projet est introuvable.', 404);
+	return project;
 }

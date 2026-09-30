@@ -19,10 +19,21 @@ const copyProjectImages = {
             mkdirSync(dirname(outputPath), { recursive: true });
             copyFileSync(resolve(imagePath), outputPath);
         });
+
+        const projectDataPath = resolve('dist/config/projets.json');
+        mkdirSync(dirname(projectDataPath), { recursive: true });
+        copyFileSync(resolve('config/projets.json'), projectDataPath);
+
+        ['header.html', 'footer.html'].forEach((filename) => {
+            const outputPath = resolve('dist/assets/partials', filename);
+            mkdirSync(dirname(outputPath), { recursive: true });
+            copyFileSync(resolve('assets/partials', filename), outputPath);
+        });
     },
 };
 
 export default defineConfig({
+    base: './',
     plugins: [motionStudio(), copyProjectImages],
     server: {
         host: '127.0.0.1',

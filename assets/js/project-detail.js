@@ -1,4 +1,4 @@
-import { requestJson } from './api.js';
+import { getProject } from './api.js';
 
 const node = (tag, className = '', text) => {
 	const result = document.createElement(tag);
@@ -194,7 +194,7 @@ async function renderProject(project, content) {
 
 	if (project.next_project_slug) {
 		try {
-			const next = await requestJson(`/api/projects.php?slug=${encodeURIComponent(project.next_project_slug)}`);
+			const next = await getProject(project.next_project_slug);
 			const banner = node('section', 'next-project-banner');
 			banner.setAttribute('aria-labelledby', 'next-project-title');
 			const inner = node('div', 'next-project-banner__inner');
@@ -224,7 +224,7 @@ if (root) {
 	root.setAttribute('aria-busy', 'true');
 	try {
 		if (!slug) throw new Error('Cette fiche projet n’existe pas.');
-		const project = await requestJson(`/api/projects.php?slug=${encodeURIComponent(slug)}`);
+		const project = await getProject(slug);
 		document.title = `${project.title} — Étude de cas | Ambre`;
 		document.body.classList.toggle('case-study--marmiton', project.slug === 'marmiton-numerique');
 		document.querySelector('meta[name="description"]')?.setAttribute('content', project.subtitle);

@@ -47,7 +47,7 @@ function initializeNavigation() {
 }
 
 await Promise.all([
-	loadPartial(document.querySelector('[data-site-header]'), '/assets/partials/header.html'),
-	loadPartial(document.querySelector('[data-site-footer]'), '/assets/partials/footer.html'),
+	loadPartial(document.querySelector('[data-site-header]'), 'assets/partials/header.html'),
+	loadPartial(document.querySelector('[data-site-footer]'), 'assets/partials/footer.html'),
 ]);
 initializeNavigation();

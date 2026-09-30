@@ -1,4 +1,4 @@
-import { requestJson } from './api.js';
+import { getProjects } from './api.js';
 
 const element = (tag, className, text) => {
 	const node = document.createElement(tag);
@@ -118,7 +118,7 @@ async function render(root, featuredOnly) {
 	root.classList.add('is-loading');
 	root.setAttribute('aria-busy', 'true');
 	try {
-		const projects = await requestJson('/api/projects.php');
+		const projects = await getProjects();
 		const visibleProjects = featuredOnly
 			? ['ekoroji', 'atelier', 'ambre-portfolio'].map((slug) => projects.find((project) => project.slug === slug)).filter(Boolean)
 			: projects;

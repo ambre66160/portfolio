@@ -26,16 +26,23 @@ if (form instanceof HTMLFormElement && status) {
 	});
 
 	try {
-		const result = await requestJson('/api/contact.php');
+		const result = await requestJson('api/contact.php');
 		csrfToken = result.csrfToken;
 	} catch (error) {
-		showStatus(error.message, 'error');
-		if (submitButton) submitButton.disabled = true;
+		showStatus('L’envoi direct est indisponible sur cet hébergement. Votre messagerie prendra le relais.', '');
 	}
 
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
-		if (!form.reportValidity() || !csrfToken) return;
+		if (!form.reportValidity()) return;
+		if (!csrfToken) {
+			const formData = new FormData(form);
+			const name = String(formData.get('name') || '').trim();
+			const subject = String(formData.get('subject') || '').trim() || `Message de ${name}`;
+			const body = `Nom : ${name}\nE-mail : ${String(formData.get('email') || '').trim()}\n\n${String(formData.get('message') || '').trim()}`;
+			window.location.href = `mailto:ambre.florette@etu.cyu.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+			return;
+		}
 
 		clearFieldErrors();
 		form.classList.add('is-loading');
@@ -47,14 +54,14 @@ if (form instanceof HTMLFormElement && status) {
 		const payload = Object.fromEntries(['name', 'email', 'subject', 'message'].map((name) => [name, String(formData.get(name) || '').trim()]));
 
 		try {
-			const result = await requestJson('/api/contact.php', {
+			const result = await requestJson('api/contact.php', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrfToken },
 				body: JSON.stringify(payload),
 			});
 			form.reset();
 			showStatus(result.message, 'success');
-			const refreshed = await requestJson('/api/contact.php');
+			const refreshed = await requestJson('api/contact.php');
 			csrfToken = refreshed.csrfToken;
 		} catch (error) {
 			Object.keys(error.fields || {}).forEach((name) => {
