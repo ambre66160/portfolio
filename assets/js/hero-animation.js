@@ -2,7 +2,7 @@ import { animate } from 'motion';
 
 const heroTitle = document.querySelector('.hero__title-wrap');
 
-if (heroTitle) {
+if (heroTitle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     heroTitle.style.animation = 'none';
     animate(
         heroTitle,

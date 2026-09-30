@@ -56,6 +56,12 @@ En production, servir le contenu de `dist/` comme fichiers statiques et router `
 
 GitHub Pages sert les fichiers statiques sous `/portfolio/` et n’exécute pas PHP. Le frontend charge donc les projets depuis `config/projets.json` lorsque l’API n’est pas disponible. Le formulaire ouvre le client e-mail comme solution de repli ; pour conserver l’envoi JSON, héberger `api/` sur un serveur PHP et configurer une API accessible depuis le site.
 
+## Référencement et accessibilité
+
+Les pages définissent leur URL canonique et leurs métadonnées Open Graph/Twitter. La page d’accueil et les fiches projet ajoutent des données structurées JSON-LD. `robots.txt` et `sitemap.xml` sont copiés dans `dist/`. Les pages proposent un lien de saut au contenu, un focus clavier contrasté et respectent la préférence de réduction des animations.
+
+Les pages `mentions-legales.html` et `politique-confidentialite.html` sont liées uniquement depuis le footer. Les mentions légales contiennent volontairement des champs à compléter : nom légal complet, statut juridique et adresse postale de l’éditrice. Ces informations doivent être confirmées avant de considérer les mentions comme définitives.
+
 ## Build
 
 ```sh

@@ -57,7 +57,13 @@ export default defineConfig({
                 competences: 'competences.html',
                 contact: 'contact.html',
                 'projet-detail': 'projet-detail.html',
+                            'mentions-legales': 'mentions-legales.html',
+                            'politique-confidentialite': 'politique-confidentialite.html',
             },
         },
     },
 });
+
+        ['robots.txt', 'sitemap.xml'].forEach((filename) => {
+            copyFileSync(resolve(filename), resolve('dist', filename));
+        });

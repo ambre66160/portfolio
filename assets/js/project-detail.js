@@ -1,4 +1,4 @@
-import { getProject } from './api.js?v=2';
+import { getProject } from './api.js?v=3';
 
 const node = (tag, className = '', text) => {
 	const result = document.createElement(tag);
@@ -107,6 +107,7 @@ async function renderProject(project, content) {
 			link.href = url;
 			link.target = '_blank';
 			link.rel = 'noreferrer';
+			link.setAttribute('aria-label', `${item.label} (ouvre un nouvel onglet)`);
 			link.append(document.createTextNode(`${item.label} `), node('span', '', '↗'));
 			link.lastElementChild.setAttribute('aria-hidden', 'true');
 			links.append(link);
@@ -228,6 +229,27 @@ if (root) {
 		document.title = `${project.title} — Étude de cas | Ambre`;
 		document.body.classList.toggle('case-study--marmiton', project.slug === 'marmiton-numerique');
 		document.querySelector('meta[name="description"]')?.setAttribute('content', project.subtitle);
+		const canonicalUrl = new URL('projet-detail.html', document.baseURI);
+		canonicalUrl.searchParams.set('slug', project.slug);
+		document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl.href);
+		document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${project.title} — Étude de cas | Ambre`);
+		document.querySelector('meta[property="og:description"]')?.setAttribute('content', project.subtitle);
+		document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl.href);
+		const socialImage = safeAssetUrl(project.image_hero || project.image_banner_webp || project.image_banner);
+		if (socialImage) document.querySelector('meta[property="og:image"]')?.setAttribute('content', socialImage);
+		const projectSchema = document.createElement('script');
+		projectSchema.type = 'application/ld+json';
+		projectSchema.textContent = JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'CreativeWork',
+			name: project.title,
+			description: project.subtitle,
+			url: canonicalUrl.href,
+			image: socialImage || undefined,
+			creator: { '@type': 'Person', name: 'Ambre' },
+			keywords: project.technologies,
+		});
+		document.head.append(projectSchema);
 		await renderProject(project, content);
 		content.hidden = false;
 	} catch (error) {

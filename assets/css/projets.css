@@ -684,7 +684,7 @@
 }
 
 .projects-footer .site-footer__links {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .projects-footer__socials {
@@ -709,6 +709,12 @@
 .projects-footer__socials a:hover {
     border-color: var(--color-wine);
     background: var(--color-wine);
+}
+
+@media (max-width: 700px) {
+    .projects-footer .site-footer__links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 .contact-form__feedback {

@@ -44,11 +44,11 @@ export async function getProjects() {
 	if (!projectsPromise) {
 		projectsPromise = (async () => {
 			try {
-				return await requestJson('api/projects.php?v=2');
+				return await requestJson('api/projects.php?v=3');
 			} catch (apiError) {
 				try {
 					const dataUrl = new URL('config/projets.json', document.baseURI);
-					dataUrl.searchParams.set('v', '2');
+					dataUrl.searchParams.set('v', '3');
 					const response = await fetch(dataUrl);
 					if (!response.ok) throw new Error('Les données statiques sont indisponibles.');
 					const projects = await response.json();

@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#1e0b0b">
     <meta name="description" content="Le portfolio d’Ambre, développeuse full stack. Parcours, compétences et projets web.">
+    <link rel="canonical" href="https://ambre66160.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ambre — Développeuse full stack">
+    <meta property="og:title" content="Ambre — Développeuse full stack">
+    <meta property="og:description" content="Le portfolio d’Ambre : parcours, compétences et projets web.">
+    <meta property="og:url" content="https://ambre66160.github.io/portfolio/">
+    <meta property="og:image" content="https://ambre66160.github.io/portfolio/assets/images/femme.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Ambre — Développeuse full stack</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/projets.css">
-    <script type="module" src="assets/js/main.js?v=2"></script>
+    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <link rel="stylesheet" href="assets/css/components.css?v=3">
+    <link rel="stylesheet" href="assets/css/responsive.css?v=3">
+    <link rel="stylesheet" href="assets/css/projets.css?v=3">
+    <script type="module" src="assets/js/main.js?v=3"></script>
 </head>
 <body class="home-page">
+<a class="skip-link" href="#main-content">Passer au contenu</a>
 <div data-site-header></div>
 <section class="hero" id="accueil" aria-labelledby="home-title">
     <div class="hero__content">
@@ -29,7 +38,7 @@
         </div>
     </div>
 </section>
-<main>
+<main id="main-content" tabindex="-1">
     <div class="marquee" aria-label="Technologies : HTML, CSS, JavaScript, Java, Python, SQL, Flask, C, React et JEE">
         <p class="visually-hidden">HTML — CSS — JavaScript — Java — Python — SQL — Flask — C — React — JEE</p>
         <div class="marquee__track" aria-hidden="true">
@@ -77,5 +86,16 @@
     </section>
 </main>
 <div data-site-footer></div>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ambre",
+    "jobTitle": "Développeuse full stack",
+    "url": "https://ambre66160.github.io/portfolio/",
+    "email": "ambre.florette@etu.cyu.fr",
+    "sameAs": ["https://github.com/ambre_66160"]
+}
+</script>
 </body>
 </html>

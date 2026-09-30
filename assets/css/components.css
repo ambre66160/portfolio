@@ -929,6 +929,115 @@
 	color: var(--color-white);
 }
 
+.legal-main {
+	width: min(100%, 1200px);
+	margin-inline: auto;
+	padding: clamp(3.5rem, 7vw, 6rem) var(--page-gutter) clamp(5rem, 9vw, 8rem);
+}
+
+.legal-heading {
+	max-width: 54rem;
+	margin-bottom: 3rem;
+}
+
+.legal-heading .section__eyebrow {
+	margin-bottom: 1rem;
+	color: var(--color-wine);
+}
+
+.legal-heading h1 {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: clamp(2.8rem, 6vw, 5rem);
+	font-weight: 600;
+	line-height: 1.08;
+}
+
+.legal-heading h1 span {
+	color: var(--color-wine);
+}
+
+.legal-heading > p:last-child,
+.legal-document > section > p,
+.legal-document > p {
+	color: var(--color-muted);
+	line-height: 1.8;
+}
+
+.legal-heading > p:last-child {
+	max-width: 42rem;
+	margin: 1rem 0 0;
+}
+
+.legal-document {
+	max-width: 54rem;
+}
+
+.legal-document section {
+	padding-block: 1.5rem;
+	border-top: 1px solid var(--color-line);
+}
+
+.legal-document h2 {
+	margin: 0 0 0.75rem;
+	font-family: var(--font-display);
+	font-size: 1.55rem;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.legal-document section > p {
+	margin: 0.65rem 0;
+}
+
+.legal-document a {
+	color: var(--color-wine-dark);
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+.legal-notice {
+	margin: 0 0 1.5rem;
+	padding: 1rem 1.1rem;
+	border-left: 4px solid var(--color-wine);
+	background: var(--color-project-salmon);
+	color: var(--color-wine-dark) !important;
+}
+
+.legal-details {
+	display: grid;
+	gap: 0.75rem;
+	margin: 1rem 0 0;
+}
+
+.legal-details > div {
+	display: grid;
+	grid-template-columns: minmax(10rem, 0.35fr) minmax(0, 1fr);
+	gap: 1rem;
+}
+
+.legal-details dt {
+	font-weight: 700;
+}
+
+.legal-details dd {
+	margin: 0;
+	color: var(--color-muted);
+}
+
+.legal-updated {
+	margin-top: 1.5rem;
+	font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+	.legal-details > div {
+		grid-template-columns: 1fr;
+		gap: 0.15rem;
+	}
+}
 .site-footer__bottom a span {
 	margin-left: 0.35rem;
 	color: var(--color-coral);

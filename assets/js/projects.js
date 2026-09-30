@@ -1,4 +1,4 @@
-import { getProjects } from './api.js?v=2';
+import { getProjects } from './api.js?v=3';
 
 const element = (tag, className, text) => {
 	const node = document.createElement(tag);
@@ -97,6 +97,7 @@ function projectListCard(project, index) {
 		link.href = linkUrl;
 		link.target = '_blank';
 		link.rel = 'noreferrer';
+		link.setAttribute('aria-label', `${item.label} (ouvre un nouvel onglet)`);
 		link.append(document.createTextNode(`${item.label} `), element('span', '', '↗'));
 		link.lastElementChild.setAttribute('aria-hidden', 'true');
 		content.append(link);
