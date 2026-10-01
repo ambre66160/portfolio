@@ -156,7 +156,7 @@
 
 .hero__vertical {
 	position: absolute;
-	top: calc(70% + 1.25rem);
+	top: calc(50% + 1.25rem);
 	right: calc(100% + clamp(0.7rem, 1.5vw, 1.25rem));
 	left: auto;
 	margin: 0;

@@ -1,6 +1,6 @@
 import { animate, stagger } from 'motion';
 
-const entrySelector = '.hero__vertical, .hero__role, .hero__title, .hero__version, .hero__actions > *, h1, .projects-intro__eyebrow, .projects-intro__bottom, .competences-intro__text, .contact-heading__eyebrow, .contact-heading > p:last-child, .about-eyebrow';
+const entrySelector = '.hero__role, .hero__title, .hero__version, .hero__actions > *, h1, .projects-intro__eyebrow, .projects-intro__bottom, .competences-intro__text, .contact-heading__eyebrow, .contact-heading > p:last-child, .about-eyebrow';
 const entryOptions = {
 	delay: stagger(0.06),
 	duration: 0.8,
@@ -89,6 +89,8 @@ export function PageTransition(root = document.body) {
 	if (targets.length) {
 		document.documentElement.classList.add('is-page-transitioning');
 		animation = animate(targets, { opacity: [0, 1], y: [40, 0] }, entryOptions);
+		const verticalHeroLabel = root.querySelector('.hero__vertical');
+		if (verticalHeroLabel) animate(verticalHeroLabel, { opacity: [0, 1] }, { duration: 0.64, delay: 0.12, ease: [0.25, 1, 0.5, 1] });
 		animation.then(finish);
 	}
 	return dispose;

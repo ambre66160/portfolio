@@ -588,6 +588,7 @@
 .case-next-project {
 	margin-inline: calc(-1 * var(--page-gutter));
 	padding: clamp(2rem, 5vw, 4rem) var(--page-gutter);
+	border-radius: 4rem;
 	background: var(--color-night);
 	color: var(--color-white);
 }
