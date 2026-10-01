@@ -54,7 +54,9 @@ En production, servir le contenu de `dist/` comme fichiers statiques et router `
 
 ## GitHub Pages
 
-GitHub Pages sert les fichiers statiques sous `/portfolio/` et n’exécute pas PHP. Le frontend charge donc les projets depuis `config/projets.json` lorsque l’API n’est pas disponible. Le formulaire ouvre le client e-mail comme solution de repli ; pour conserver l’envoi JSON, héberger `api/` sur un serveur PHP et configurer une API accessible depuis le site.
+GitHub Pages sert les fichiers statiques sous `/portfolio/` et n’exécute pas PHP. Il doit publier le build Vite de `dist/` : les modules source importent `motion` et `lenis`, que le navigateur ne peut pas résoudre sans bundling. Le workflow `.github/workflows/deploy-pages.yml` construit et publie `dist/` à chaque push sur `main`. Dans **Settings > Pages > Build and deployment**, choisir **GitHub Actions** comme source.
+
+Le frontend charge les projets depuis `config/projets.json` lorsque l’API n’est pas disponible. Le formulaire ouvre le client e-mail comme solution de repli ; pour conserver l’envoi JSON, héberger `api/` sur un serveur PHP et configurer une API accessible depuis le site.
 
 ## Référencement et accessibilité
 
