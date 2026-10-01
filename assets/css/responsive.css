@@ -216,33 +216,6 @@
 		animation-duration: 30s;
 	}
 
-	.about {
-		min-height: 0;
-	}
-
-	.about__layout {
-		grid-template-columns: 1fr;
-		gap: 2.5rem;
-	}
-
-	.home-about__portrait {
-		width: min(100%, 25rem);
-		justify-self: center;
-		margin-right: 0.6rem;
-	}
-
-	.about__copy {
-		max-width: 34rem;
-	}
-
-	.about__copy .about__lead {
-		font-size: 1.55rem;
-	}
-
-	.about__note {
-		margin-top: 2.5rem;
-	}
-
 	.experience__grid,
 	.projects__grid {
 		grid-template-columns: 1fr;

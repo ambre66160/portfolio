@@ -2,7 +2,7 @@ import { animate, springValue, stagger } from 'motion';
 
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(pointer: fine)');
-const revealSelector = '.section__eyebrow, .section__heading-row, .info-card, .project-card, .project-hero__visual, .project-meta > div, .metric-card, .project-context__visual, .approach-card, .learning-card, .skill-card, .skill-card__badges, .passion-card, .contact-detail, .contact-form, .social-card, .about-quote';
+const revealSelector = '.section__eyebrow, .section__heading-row, .info-card, .project-card, .project-hero__visual, .project-meta > div, .metric-card, .project-context__visual, .approach-card, .learning-card, .skill-card, .skill-card__badges, .passion-card, .contact-detail, .contact-form, .social-card, .about-card, .about-stagger, .about-quote';
 const magneticSelector = '.button, .social-card';
 const magneticSpring = { stiffness: 360, damping: 32, mass: 0.35 };
 const pointerSpring = { stiffness: 520, damping: 40, mass: 0.35 };
@@ -38,6 +38,18 @@ function startMotionInteractions() {
 	function reveal(target) {
 		if (animatedElements.has(target)) return;
 		animatedElements.add(target);
+
+		if (target.matches('.about-stagger')) {
+			const children = [...target.children];
+			if (children.length) {
+				animateTracked(
+					children,
+					{ opacity: [0, 1], y: [35, 0] },
+					{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: stagger(0.15) },
+				);
+			}
+			return;
+		}
 
 		if (target.matches('.skill-card__badges')) {
 			const badges = [...target.children];
