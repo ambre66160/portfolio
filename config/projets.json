@@ -8,9 +8,41 @@
     "technologies": ["React", "Node.js", "PostgreSQL"],
     "type": "Application Web",
     "image_hero": "assets/images/Ekoroji_index_2.png",
+    "image_hero_alt": "Écran Explorer de l’application EKOROJI",
+    "image_hero_device": "mobile",
     "image_banner": "assets/images/download.gif",
     "image_banner_webp": "assets/images/download.webp",
     "image_context": "assets/images/Ekoroji_waste_new.png",
+    "gallery": [
+      {
+        "src": "assets/images/Ekoroji_index_2.png",
+        "alt": "Écran Explorer d’EKOROJI avec recherche et ajout de déchets",
+        "caption": "Explorer : rechercher des déchets et ouvrir une fiche pratique.",
+        "kind": "final",
+        "device": "mobile"
+      },
+      {
+        "src": "assets/images/Ekoroji_articles_2.png",
+        "alt": "Écran S’informer avec les articles de sensibilisation d’EKOROJI",
+        "caption": "S’informer : des articles courts pour comprendre le tri.",
+        "kind": "final",
+        "device": "mobile"
+      },
+      {
+        "src": "assets/images/Ekoroji_popular_2.png",
+        "alt": "Écran Communauté avec les déchets les plus recherchés",
+        "caption": "Communauté : repérer les déchets les plus recherchés.",
+        "kind": "final",
+        "device": "mobile"
+      },
+      {
+        "src": "assets/images/Ekoroji_waste_new.png",
+        "alt": "Formulaire mobile pour ajouter un déchet dans EKOROJI",
+        "caption": "Contribution : ajouter une fiche de déchet à la base.",
+        "kind": "final",
+        "device": "mobile"
+      }
+    ],
     "metrics": [],
     "highlights": [
       "Suggestions de recettes à partir des ingrédients disponibles.",

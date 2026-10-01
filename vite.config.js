@@ -8,11 +8,12 @@ const copyProjectImages = {
     apply: 'build',
     writeBundle() {
         const projects = JSON.parse(readFileSync(resolve('config/projets.json'), 'utf8'));
-        const imagePaths = new Set(projects.flatMap((project) =>
-            Object.entries(project)
+        const imagePaths = new Set(projects.flatMap((project) => [
+            ...Object.entries(project)
                 .filter(([key, value]) => key.startsWith('image_') && typeof value === 'string' && value.startsWith('assets/images/'))
                 .map(([, value]) => value),
-        ));
+            ...(Array.isArray(project.gallery) ? project.gallery.map((item) => item.src) : []),
+        ].filter((imagePath) => typeof imagePath === 'string' && imagePath.startsWith('assets/images/'))));
 
         imagePaths.forEach((imagePath) => {
             const outputPath = resolve('dist', imagePath);

@@ -28,6 +28,8 @@ Ouvrir `http://127.0.0.1:5173`. Vite transmet les requêtes `/api/*` au serveur 
 
 Les données de projets sont conservées dans `config/projets.json` et ne sont plus intégrées au HTML côté serveur.
 
+Les fiches de projet sont pilotées par `slug`. Les champs `metrics`, `gallery`, `objectives`/`deliverables`, `skills`, `soft_skills`, `architecture`, `demo_url` et `repository_url` sont optionnels ; les sections correspondantes sont omises quand les données manquent. Une entrée de galerie accepte `src`, `alt`, `caption`, `kind` (`wireframe`, `final` ou `screenshot`) et `device` (`mobile`, `tablet` ou `desktop`). Les sources d’images de galerie sont copiées dans `dist/` par Vite.
+
 | Méthode | URL | Réponse |
 | --- | --- | --- |
 | `GET` | `/api/projects.php` | `200 { "data": [Project, ...] }` |
