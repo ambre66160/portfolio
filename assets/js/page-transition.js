@@ -1,79 +1,97 @@
 import { animate, stagger } from 'motion';
 
-const transitionSelector = 'h1, [data-project-loading], .project-card, .skill-card, .passion-card, .social-card';
-const transitionOptions = {
-	delay: stagger(0.055),
-	duration: 0.72,
+const entrySelector = '.hero__vertical, .hero__role, .hero__title, .hero__version, .hero__actions > *, h1, .projects-intro__eyebrow, .projects-intro__bottom, .competences-intro__text, .contact-heading__eyebrow, .contact-heading > p:last-child, .about-eyebrow';
+const entryOptions = {
+	delay: stagger(0.06),
+	duration: 0.8,
 	ease: [0.25, 1, 0.5, 1],
 };
 
-export function PageTransition(root = document.querySelector('main')) {
+function playInitialLoader() {
+	try {
+		if (sessionStorage.getItem('portfolio-motion-seen')) return;
+		sessionStorage.setItem('portfolio-motion-seen', '1');
+	} catch {
+		return;
+	}
+
+	const loader = document.createElement('div');
+	loader.className = 'page-loader';
+	loader.setAttribute('aria-hidden', 'true');
+	const mark = document.createElement('span');
+	mark.className = 'page-loader__mark';
+	mark.textContent = 'A';
+	loader.append(mark);
+	document.body.append(loader);
+
+	const curtain = animate(loader, { scaleY: [1, 0] }, { duration: 0.72, ease: [0.16, 1, 0.3, 1] });
+	animate(mark, { opacity: [0, 1, 0], scale: [0.92, 1, 1.06] }, { duration: 0.62, times: [0, 0.2, 1], ease: [0.25, 1, 0.5, 1] });
+	curtain.then(() => loader.remove());
+}
+
+export function PageTransition(root = document.body) {
 	const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 	if (!root || motionPreference.matches) return () => {};
 
-	const activeAnimations = new Set();
 	const animatedElements = new WeakSet();
-	const observer = new MutationObserver((records) => {
-		const addedElements = records.flatMap(({ addedNodes }) => [...addedNodes]).flatMap((node) => {
-			if (!(node instanceof Element)) return [];
-			return [
-				...(node.matches(transitionSelector) ? [node] : []),
-				...node.querySelectorAll(transitionSelector),
-			];
-		});
-		animateElements(addedElements);
+	const targets = [...root.querySelectorAll(entrySelector)].filter((element) => {
+		const bounds = element.getBoundingClientRect();
+		return bounds.bottom > 0 && bounds.top < window.innerHeight;
 	});
-	let activeCount = 0;
-	let initialAnimationFinished = false;
+	targets.forEach((element) => animatedElements.add(element));
+
+	playInitialLoader();
 	let isFinished = false;
+	let animation;
+	let disposed = false;
 
 	function finish() {
 		if (isFinished) return;
 		isFinished = true;
-		observer.disconnect();
 		document.documentElement.classList.remove('is-page-transitioning');
-		window.removeEventListener('pagehide', completeAnimations);
-		motionPreference.removeEventListener('change', handleMotionPreference);
-	}
-
-	function completeAnimations() {
-		activeAnimations.forEach((animation) => animation.complete());
-		finish();
 	}
 
 	function handleMotionPreference() {
-		if (motionPreference.matches) completeAnimations();
+		if (motionPreference.matches) dispose();
 	}
 
-	function animateElements(elements) {
-		const targets = [...new Set(elements)].filter((element) => {
+	function dispose() {
+		if (disposed) return;
+		disposed = true;
+		animation?.complete();
+		mutationObserver.disconnect();
+		finish();
+		window.removeEventListener('pagehide', dispose);
+		motionPreference.removeEventListener('change', handleMotionPreference);
+	}
+
+	const mutationObserver = new MutationObserver((records) => {
+		const added = records.flatMap(({ addedNodes }) => [...addedNodes]).flatMap((node) => {
+			if (!(node instanceof Element)) return [];
+			return [
+				...(node.matches(entrySelector) ? [node] : []),
+				...node.querySelectorAll(entrySelector),
+			];
+		});
+		const visible = [...new Set(added)].filter((element) => {
 			if (animatedElements.has(element)) return false;
+			const bounds = element.getBoundingClientRect();
+			if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) return false;
 			animatedElements.add(element);
 			return true;
 		});
-		if (targets.length === 0 || isFinished) return;
+		if (visible.length) animate(visible, { opacity: [0, 1], y: [24, 0] }, { duration: 0.6, ease: [0.25, 1, 0.5, 1] });
+	});
 
-		activeCount += 1;
-		const animation = animate(targets, { opacity: [0, 1], y: [18, 0] }, transitionOptions);
-		activeAnimations.add(animation);
-		animation.then(() => {
-			activeAnimations.delete(animation);
-			activeCount -= 1;
-			if (initialAnimationFinished && activeCount === 0) finish();
-		});
-	}
-
-	const initialTargets = [...root.querySelectorAll(transitionSelector)];
-	if (initialTargets.length === 0) initialTargets.push(root);
-	document.documentElement.classList.add('is-page-transitioning');
-	observer.observe(root, { childList: true, subtree: true });
-	window.addEventListener('pagehide', completeAnimations);
+	mutationObserver.observe(root, { childList: true, subtree: true });
+	window.addEventListener('pagehide', dispose);
 	motionPreference.addEventListener('change', handleMotionPreference);
-	animateElements(initialTargets);
-	initialAnimationFinished = true;
-	if (activeCount === 0) finish();
-
-	return finish;
+	if (targets.length) {
+		document.documentElement.classList.add('is-page-transitioning');
+		animation = animate(targets, { opacity: [0, 1], y: [40, 0] }, entryOptions);
+		animation.then(finish);
+	}
+	return dispose;
 }
 
 PageTransition();

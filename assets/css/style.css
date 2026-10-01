@@ -55,6 +55,85 @@ html.is-page-transitioning body {
 	pointer-events: none;
 }
 
+.page-loader {
+	position: fixed;
+	z-index: 1200;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	background: var(--color-night);
+	transform: scaleY(1);
+	transform-origin: top;
+	pointer-events: none;
+}
+
+.page-loader__mark {
+	color: var(--color-coral);
+	font-family: var(--font-display);
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+.has-magnetic-motion {
+	translate: var(--magnetic-x, 0px) var(--magnetic-y, 0px);
+	transition: translate 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.custom-cursor {
+	position: fixed;
+	z-index: 1300;
+	top: 0;
+	left: 0;
+	display: grid;
+	width: 12px;
+	aspect-ratio: 1;
+	place-items: center;
+	border: 1px solid rgba(30, 11, 11, 0.5);
+	border-radius: 50%;
+	background: var(--color-coral);
+	color: var(--color-white);
+	font-size: 0.36rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	opacity: 0;
+	transform: translate3d(var(--cursor-x, -100px), var(--cursor-y, -100px), 0) translate(-50%, -50%) scale(var(--cursor-scale, 1));
+	transition: opacity 120ms ease, background-color 150ms ease;
+	pointer-events: none;
+}
+
+.custom-cursor.is-visible {
+	opacity: 1;
+}
+
+.custom-cursor.is-interactive {
+	--cursor-scale: 1.65;
+}
+
+.custom-cursor.is-view {
+	--cursor-scale: 3.3;
+	border-color: var(--color-wine);
+	background: var(--color-wine);
+}
+
+.custom-cursor__label {
+	opacity: 0;
+	transform: scale(0.8);
+	transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.custom-cursor.is-view .custom-cursor__label {
+	opacity: 1;
+	transform: scale(1);
+}
+
+@media (pointer: fine) {
+	html.has-custom-cursor,
+	html.has-custom-cursor body,
+	html.has-custom-cursor body * {
+		cursor: none !important;
+	}
+}
+
 html {
 	scroll-behavior: auto;
 	scroll-padding-top: 2rem;
@@ -232,5 +311,10 @@ a:focus-visible {
 	::view-transition-old(root),
 	::view-transition-new(root) {
 		animation-duration: 0.01ms !important;
+	}
+
+	.page-loader,
+	.custom-cursor {
+		display: none !important;
 	}
 }

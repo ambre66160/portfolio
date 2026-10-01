@@ -188,6 +188,17 @@
 		font-size: 0.57rem;
 	}
 
+	.hero__actions {
+		gap: 0.5rem;
+		margin-top: 1.1rem;
+	}
+
+	.hero__actions .button {
+		min-height: 2.65rem;
+		padding-inline: 0.78rem;
+		font-size: 0.63rem;
+	}
+
 	.hero__signature,
 	.hero__scroll {
 		bottom: 2rem;
@@ -291,6 +302,15 @@
 
 	.site-footer__bottom > span {
 		display: none;
+	}
+}
+
+@media (max-width: 390px) {
+	.hero__actions {
+		align-items: stretch;
+		flex-direction: column;
+		width: min(100%, 15rem);
+		margin-inline: auto;
 	}
 }
 

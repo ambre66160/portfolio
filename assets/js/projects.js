@@ -35,14 +35,18 @@ function featuredCard(project) {
 		image.alt = '';
 		image.loading = 'lazy';
 		image.decoding = 'async';
-		art.append(image, element('span', 'project-art__wordmark', project.title));
+		const discover = element('span', 'project-visual__discover', 'Découvrir le projet');
+		discover.setAttribute('aria-hidden', 'true');
+		art.append(image, element('span', 'project-art__wordmark', project.title), discover);
 		article.append(art);
 	} else {
 		const art = element('div', 'project-art project-art--placeholder');
 		art.setAttribute('role', 'img');
 		art.setAttribute('aria-label', `Aperçu du projet ${project.title}`);
 		art.append(element('span', '', Array.from(project.title || '?')[0] || '?'));
-		art.append(element('strong', '', project.title), element('small', '', project.type));
+		const discover = element('span', 'project-visual__discover', 'Découvrir le projet');
+		discover.setAttribute('aria-hidden', 'true');
+		art.append(element('strong', '', project.title), element('small', '', project.type), discover);
 		article.append(art);
 	}
 
@@ -76,7 +80,9 @@ function projectListCard(project, index) {
 		visual.append(element('span', 'project-placeholder__index', `${String(index + 1).padStart(2, '0')} / ÉTUDE DE CAS`), element('strong', '', project.title));
 	}
 	const caption = element('span', 'project-card__visual-caption', `${project.type} · ${project.duration || ''}`);
-	visual.append(caption);
+	const discover = element('span', 'project-visual__discover', 'Découvrir le projet');
+	discover.setAttribute('aria-hidden', 'true');
+	visual.append(caption, discover);
 
 	const content = element('div', 'project-card__content');
 	const meta = element('div', 'project-card__meta');
