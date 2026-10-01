@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { motionStudio } from 'motion-studio';
-import { copyFileSync, mkdirSync, readFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 const copyProjectImages = {
@@ -28,6 +28,11 @@ const copyProjectImages = {
             const outputPath = resolve('dist/assets/partials', filename);
             mkdirSync(dirname(outputPath), { recursive: true });
             copyFileSync(resolve('assets/partials', filename), outputPath);
+        });
+
+        ['robots.txt', 'sitemap.xml'].forEach((filename) => {
+            const sourcePath = resolve(filename);
+            if (existsSync(sourcePath)) copyFileSync(sourcePath, resolve('dist', filename));
         });
     },
 };
@@ -63,7 +68,3 @@ export default defineConfig({
         },
     },
 });
-
-        ['robots.txt', 'sitemap.xml'].forEach((filename) => {
-            copyFileSync(resolve(filename), resolve('dist', filename));
-        });
