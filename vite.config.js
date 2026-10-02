@@ -1,46 +1,48 @@
 import { defineConfig } from 'vite';
 import { motionStudio } from 'motion-studio';
-import { copyFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { copyFileSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
+import { basename, dirname, resolve } from 'node:path';
 
-const copyProjectImages = {
-    name: 'copy-project-images',
+const IMAGE_PREFIX = 'assets/images/';
+const PROJECTS_PATH = 'config/projets.json';
+
+const copyToDist = (relativePath) => {
+    const outputPath = resolve('dist', relativePath);
+    mkdirSync(dirname(outputPath), { recursive: true });
+    copyFileSync(resolve(relativePath), outputPath);
+};
+
+// Les images et le JSON des projets sont chargés à l'exécution : Vite ne les voit pas.
+const copyProjectData = {
+    name: 'copy-project-data',
     apply: 'build',
     writeBundle() {
-        const projects = JSON.parse(readFileSync(resolve('config/projets.json'), 'utf8'));
-        const imagePaths = new Set(projects.flatMap((project) => [
-            ...Object.entries(project)
-                .filter(([key, value]) => key.startsWith('image_') && typeof value === 'string' && value.startsWith('assets/images/'))
-                .map(([, value]) => value),
-            ...(Array.isArray(project.gallery) ? project.gallery.map((item) => item.src) : []),
-        ].filter((imagePath) => typeof imagePath === 'string' && imagePath.startsWith('assets/images/'))));
+        const projects = JSON.parse(readFileSync(resolve(PROJECTS_PATH), 'utf8'));
+        const imagePaths = new Set(
+            projects
+                .flatMap((project) => [
+                    ...Object.entries(project)
+                        .filter(([key]) => key.startsWith('image_'))
+                        .map(([, value]) => value),
+                    ...(Array.isArray(project.gallery) ? project.gallery.map((item) => item.src) : []),
+                ])
+                .filter((imagePath) => typeof imagePath === 'string' && imagePath.startsWith(IMAGE_PREFIX)),
+        );
 
-        imagePaths.forEach((imagePath) => {
-            const outputPath = resolve('dist', imagePath);
-            mkdirSync(dirname(outputPath), { recursive: true });
-            copyFileSync(resolve(imagePath), outputPath);
-        });
-
-        const projectDataPath = resolve('dist/config/projets.json');
-        mkdirSync(dirname(projectDataPath), { recursive: true });
-        copyFileSync(resolve('config/projets.json'), projectDataPath);
-
-        ['header.html', 'footer.html'].forEach((filename) => {
-            const outputPath = resolve('dist/assets/partials', filename);
-            mkdirSync(dirname(outputPath), { recursive: true });
-            copyFileSync(resolve('assets/partials', filename), outputPath);
-        });
-
-        ['robots.txt', 'sitemap.xml'].forEach((filename) => {
-            const sourcePath = resolve(filename);
-            if (existsSync(sourcePath)) copyFileSync(sourcePath, resolve('dist', filename));
-        });
+        imagePaths.forEach(copyToDist);
+        copyToDist(PROJECTS_PATH);
     },
 };
 
+const pages = Object.fromEntries(
+    readdirSync('.')
+        .filter((file) => file.endsWith('.html'))
+        .map((file) => [basename(file, '.html'), file]),
+);
+
 export default defineConfig({
     base: './',
-    plugins: [motionStudio(), copyProjectImages],
+    plugins: [motionStudio(), copyProjectData],
     server: {
         host: '127.0.0.1',
         port: 5173,
@@ -55,17 +57,6 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         emptyOutDir: true,
-        rollupOptions: {
-            input: {
-                index: 'index.html',
-                projets: 'projets.html',
-                'qui-suis-je': 'qui-suis-je.html',
-                competences: 'competences.html',
-                contact: 'contact.html',
-                'projet-detail': 'projet-detail.html',
-                            'mentions-legales': 'mentions-legales.html',
-                            'politique-confidentialite': 'politique-confidentialite.html',
-            },
-        },
+        rollupOptions: { input: pages },
     },
 });

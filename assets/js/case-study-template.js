@@ -1,5 +1,6 @@
+import { motionPreference } from './motion-preference.js';
 import { animate } from 'motion';
-import { getProject } from './api.js?v=3';
+import { getProject } from './api.js';
 
 const createElement = (tag, className = '', text) => {
 	const element = document.createElement(tag);
@@ -176,7 +177,7 @@ function renderMetrics(project) {
 function startMetricCounters(root) {
 	const counters = [...root.querySelectorAll('[data-value]')];
 	if (!counters.length) return;
-	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	const reducedMotion = motionPreference.matches;
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			if (!entry.isIntersecting) return;

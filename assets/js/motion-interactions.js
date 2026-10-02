@@ -1,6 +1,6 @@
+import { motionPreference } from './motion-preference.js';
 import { animate, springValue, stagger } from 'motion';
 
-const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(pointer: fine)');
 const revealSelector = '.section__eyebrow, .section__heading-row, .info-card, .project-card, .project-hero__visual, .project-meta > div, .metric-card, .project-context__visual, .approach-card, .learning-card, .skill-card, .skill-card__badges, .passion-card, .contact-detail, .contact-form, .social-card, .about-card, .about-stagger, .about-quote';
 const magneticSelector = '.button, .social-card';

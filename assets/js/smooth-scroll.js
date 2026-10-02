@@ -1,7 +1,7 @@
+import { motionPreference } from './motion-preference.js';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 
-const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 let lenis;
 
 export function scrollToPage(target, options = {}) {

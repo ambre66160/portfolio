@@ -44,7 +44,7 @@ export async function getProjects() {
 	if (!projectsPromise) {
 		projectsPromise = (async () => {
 			try {
-				return await requestJson('api/projects.php?v=3');
+				return await requestJson('api/projects.php');
 			} catch (apiError) {
 				try {
 					const dataUrl = new URL('config/projets.json', document.baseURI);

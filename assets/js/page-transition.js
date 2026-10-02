@@ -1,3 +1,4 @@
+import { motionPreference } from './motion-preference.js';
 import { animate, stagger } from 'motion';
 
 const entrySelector = '.hero__role, .hero__title, .hero__version, .hero__actions > *, h1, .projects-intro__eyebrow, .projects-intro__bottom, .competences-intro__text, .contact-heading__eyebrow, .contact-heading > p:last-child, .about-eyebrow';
@@ -30,7 +31,6 @@ function playInitialLoader() {
 }
 
 export function PageTransition(root = document.body) {
-	const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 	if (!root || motionPreference.matches) return () => {};
 
 	const animatedElements = new WeakSet();

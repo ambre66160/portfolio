@@ -1,7 +1,7 @@
+import { motionPreference } from './motion-preference.js';
 import { springValue } from 'motion';
-import { scrollToPage } from './smooth-scroll.js?v=3';
+import { scrollToPage } from './smooth-scroll.js';
 
-const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(pointer: fine)');
 
 const details = {

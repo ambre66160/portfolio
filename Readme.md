@@ -62,7 +62,7 @@ Le frontend charge les projets depuis `config/projets.json` lorsque l’API n’
 
 ## Référencement et accessibilité
 
-Les pages définissent leur URL canonique et leurs métadonnées Open Graph/Twitter. La page d’accueil et les fiches projet ajoutent des données structurées JSON-LD. `robots.txt` et `sitemap.xml` sont copiés dans `dist/`. Les pages proposent un lien de saut au contenu, un focus clavier contrasté et respectent la préférence de réduction des animations.
+Les pages définissent leur URL canonique et leurs métadonnées Open Graph/Twitter. La page d’accueil et les fiches projet ajoutent des données structurées JSON-LD. `robots.txt`, `sitemap.xml` et les partials `header.html`/`footer.html` vivent dans `public/` et sont copiés tels quels dans `dist/`. Les pages proposent un lien de saut au contenu, un focus clavier contrasté et respectent la préférence de réduction des animations.
 
 Les pages `mentions-legales.html` et `politique-confidentialite.html` sont liées uniquement depuis le footer. Les mentions légales contiennent volontairement des champs à compléter : nom légal complet, statut juridique et adresse postale de l’éditrice. Ces informations doivent être confirmées avant de considérer les mentions comme définitives.
 

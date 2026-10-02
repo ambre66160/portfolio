@@ -1,4 +1,4 @@
-import { requestJson } from './api.js?v=3';
+import { requestJson } from './api.js';
 
 const form = document.querySelector('#contact-form');
 const status = document.querySelector('#contact-status');
@@ -26,7 +26,7 @@ if (form instanceof HTMLFormElement && status) {
 	});
 
 	try {
-		const result = await requestJson('api/contact.php?v=3');
+		const result = await requestJson('api/contact.php');
 		csrfToken = result.csrfToken;
 	} catch (error) {
 		showStatus('L’envoi direct est indisponible sur cet hébergement. Votre messagerie prendra le relais.', '');
@@ -54,14 +54,14 @@ if (form instanceof HTMLFormElement && status) {
 		const payload = Object.fromEntries(['name', 'email', 'subject', 'message'].map((name) => [name, String(formData.get(name) || '').trim()]));
 
 		try {
-			const result = await requestJson('api/contact.php?v=3', {
+			const result = await requestJson('api/contact.php', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrfToken },
 				body: JSON.stringify(payload),
 			});
 			form.reset();
 			showStatus(result.message, 'success');
-			const refreshed = await requestJson('api/contact.php?v=3');
+			const refreshed = await requestJson('api/contact.php');
 			csrfToken = refreshed.csrfToken;
 		} catch (error) {
 			Object.keys(error.fields || {}).forEach((name) => {
