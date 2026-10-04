@@ -213,11 +213,38 @@
     background: var(--color-white);
     box-shadow: 0 16px 48px rgba(41, 25, 24, 0.055);
     transition: transform 220ms ease, box-shadow 220ms ease;
+    position: relative;
 }
 
 .projects-page .project-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 22px 55px rgba(41, 25, 24, 0.09);
+}
+
+/* Le lien principal étend sa zone de clic à toute la carte. */
+.projects-page .project-card__main-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.projects-page .project-card:hover .project-card__main-link span {
+    transform: translateX(3px);
+}
+
+.projects-page .project-card:has(.project-card__main-link:focus-visible) {
+    outline: 2px solid var(--color-wine);
+    outline-offset: 3px;
+}
+
+.projects-page .project-card .project-detail-link:not(.project-card__main-link) {
+    position: relative;
+    z-index: 2;
+}
+
+html.has-custom-cursor .projects-page .project-card__visual .project-visual__discover {
+    display: none;
 }
 
 .project-card__visual {

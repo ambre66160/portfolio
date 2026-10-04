@@ -90,7 +90,7 @@ function projectListCard(project, index) {
 	const technologies = element('ul', 'project-card__stack');
 	technologies.setAttribute('aria-label', 'Technologies utilisées');
 	(project.technologies || []).forEach((technology) => technologies.append(element('li', '', technology)));
-	const detailLink = element('a', 'project-detail-link');
+	const detailLink = element('a', 'project-detail-link project-card__main-link');
 	detailLink.href = projectUrl(project.slug);
 	detailLink.append(document.createTextNode("Lire l'étude de cas "), element('span', '', '→'));
 	detailLink.lastElementChild.setAttribute('aria-hidden', 'true');
@@ -121,12 +121,21 @@ function safeExternalUrl(value) {
 	}
 }
 
+// Date de début extraite de `duration` (« 29/06/2026 - … » ou « 2022-2023 »).
+function startTime(project) {
+	const duration = String(project.duration || '');
+	const full = duration.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+	if (full) return Date.UTC(Number(full[3]), Number(full[2]) - 1, Number(full[1]));
+	const year = duration.match(/\d{4}/);
+	return year ? Date.UTC(Number(year[0]), 0, 1) : Infinity;
+}
+
 async function render(root, featuredOnly) {
 	root.classList.add('is-loading');
 	root.setAttribute('aria-busy', 'true');
 	try {
-		const projects = await getProjects();
-		const visibleProjects = featuredOnly ? projects.slice(0, 3) : projects;
+		const projects = [...(await getProjects())].sort((a, b) => startTime(a) - startTime(b));
+		const visibleProjects = featuredOnly ? projects.slice(-3) : projects;
 		const fragment = document.createDocumentFragment();
 		visibleProjects.forEach((project, index) => fragment.append(featuredOnly ? featuredCard(project) : projectListCard(project, index)));
 		root.replaceChildren(fragment);

@@ -6,6 +6,7 @@ const revealSelector = '.section__eyebrow, .section__heading-row, .info-card, .p
 const magneticSelector = '.button, .social-card';
 const magneticSpring = { stiffness: 360, damping: 32, mass: 0.35 };
 const pointerSpring = { stiffness: 520, damping: 40, mass: 0.35 };
+const visualSelector = '.project-card__visual--image, .project-art--data';
 
 function startMotionInteractions() {
 	const animatedElements = new WeakSet();
@@ -182,22 +183,33 @@ function startMotionInteractions() {
 		cleanupTimers.add(timer);
 	}
 
-	function updateCursorState(target) {
+	// Le lien étendu de la carte recouvre l'image : on la retrouve par position.
+	function visualAt(target, x, y) {
+		if (!(target instanceof Element)) return null;
+		const direct = target.closest(visualSelector);
+		if (direct) return direct;
+		const visual = target.closest('.project-card')?.querySelector(visualSelector);
+		if (!visual) return null;
+		const rect = visual.getBoundingClientRect();
+		return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom ? visual : null;
+	}
+
+	function updateCursorState(target, visual) {
 		if (!cursor) return;
-		const visual = target?.closest('.project-card__visual--image, .project-art--data');
 		const interactive = target?.closest('a, button, input, textarea, select, [role="button"]');
 		cursor.classList.toggle('is-interactive', Boolean(interactive));
 		cursor.classList.toggle('is-view', Boolean(visual));
-		cursor.querySelector('.custom-cursor__label').textContent = visual ? 'VOIR' : '';
+		const label = cursor.querySelector('.custom-cursor__label');
+		const text = visual ? 'voir' : '';
+		if (label.textContent !== text) label.textContent = text;
 	}
 
 	function handlePointerOver(event) {
 		if (event.pointerType === 'touch' || !(event.target instanceof Element)) return;
-		const magnetic = event.target.closest(magneticSelector);
-		const visual = event.target.closest('.project-card__visual--image, .project-art--data');
-		setMagneticTarget(magnetic);
+		setMagneticTarget(event.target.closest(magneticSelector));
+		const visual = visualAt(event.target, event.clientX, event.clientY);
 		setVisualTarget(visual);
-		updateCursorState(event.target);
+		updateCursorState(event.target, visual);
 	}
 
 	function handlePointerMove(event) {
@@ -206,6 +218,9 @@ function startMotionInteractions() {
 			cursor.classList.add('is-visible');
 			cursorX.set(event.clientX);
 			cursorY.set(event.clientY);
+			const visual = visualAt(event.target, event.clientX, event.clientY);
+			setVisualTarget(visual);
+			updateCursorState(event.target, visual);
 		}
 
 		if (activeMagnetic) {
@@ -233,9 +248,9 @@ function startMotionInteractions() {
 	function handlePointerOut(event) {
 		if (event.pointerType === 'touch') return;
 		if (activeMagnetic && (!event.relatedTarget || !activeMagnetic.contains(event.relatedTarget))) setMagneticTarget(null);
-		if (activeVisual && (!event.relatedTarget || !activeVisual.contains(event.relatedTarget))) setVisualTarget(null);
+		if (!event.relatedTarget) setVisualTarget(null);
 		if (!event.relatedTarget && cursor) cursor.classList.remove('is-visible', 'is-interactive', 'is-view');
-		else if (event.relatedTarget instanceof Element) updateCursorState(event.relatedTarget);
+		else if (event.relatedTarget instanceof Element) updateCursorState(event.relatedTarget, visualAt(event.relatedTarget, event.clientX, event.clientY));
 	}
 
 	function handleWindowBlur() {
