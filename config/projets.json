@@ -1,34 +1,34 @@
 [
   {
     "slug": "noticours",
-    "title": "Site web interactif Noticours[cite: 6]",
-    "subtitle": "Faire vivre le concept de l'application d'apprentissage par micro-notifications[cite: 7].",
-    "role": "Développeuse Web - Stage[cite: 1, 4]",
-    "duration": "29/06/2026 - 14/08/2026[cite: 1]",
-    "technologies": ["React[cite: 17]", "Vite[cite: 17]"],
-    "type": "Site Web Interactif[cite: 6]",
+    "title": "Site web interactif Noticours",
+    "subtitle": "Faire vivre le concept de l'application d'apprentissage par micro-notifications.",
+    "role": "Développeuse Web - Stage",
+    "duration": "29/06/2026 - 14/08/2026",
+    "technologies": ["React", "Vite"],
+    "type": "Site Web Interactif",
     "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
-    "image_hero_alt": "Interface d'accueil du site interactif Noticours[cite: 8]",
+    "image_hero_alt": "Interface d'accueil du site interactif Noticours",
     "image_hero_device": "desktop",
     "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
     "image_context": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
     "gallery": [],
     "metrics": [],
     "highlights": [
-      "Parcours interactif en cinq étapes : flashcards, quiz, cartes, progression, classement[cite: 7].",
-      "Système de gamification avec neuf badges à débloquer[cite: 7]."
+      "Parcours interactif en cinq étapes : flashcards, quiz, cartes, progression, classement.",
+      "Système de gamification avec neuf badges à débloquer."
     ],
-    "context": "Noticours développe une application d'apprentissage[cite: 6]. Il lui fallait un site capable de présenter et de faire essayer le concept aux visiteurs avant de télécharger l'application[cite: 6, 7].",
-    "challenge": "Développer une architecture monopage difficile à référencer tout en respectant un design system fourni, et en garantissant la maintenabilité du code[cite: 7].",
-    "solution": "Création d'un socle technique organisé par fonctionnalité sur sept pages, intégrant un parcours interactif évolutif où chaque étape se nourrit des résultats de la précédente[cite: 7].",
+    "context": "Noticours développe une application d'apprentissage. Il lui fallait un site capable de présenter et de faire essayer le concept aux visiteurs avant de télécharger l'application.",
+    "challenge": "Développer une architecture monopage difficile à référencer tout en respectant un design system fourni, et en garantissant la maintenabilité du code.",
+    "solution": "Création d'un socle technique organisé par fonctionnalité sur sept pages, intégrant un parcours interactif évolutif où chaque étape se nourrit des résultats de la précédente.",
     "approach": [
       {
         "title": "Gamification",
-        "description": "Intégration d'un compteur de badges visible en permanence et conservé entre les visites[cite: 7]."
+        "description": "Intégration d'un compteur de badges visible en permanence et conservé entre les visites."
       },
       {
         "title": "Architecture",
-        "description": "Aucune dépendance technique ajoutée sans qu'un problème réel la justifie[cite: 7]."
+        "description": "Aucune dépendance technique ajoutée sans qu'un problème réel la justifie."
       }
     ],
     "code_snippet": "",
@@ -36,38 +36,38 @@
   },
   {
     "slug": "poc-echecs",
-    "title": "Système de lecture de feuilles d'échecs (POC)[cite: 6]",
-    "subtitle": "Évaluer la faisabilité de la lecture de feuilles de match manuscrites via l'IA[cite: 9].",
-    "role": "Développeuse Prototypage IA - Stage[cite: 1, 4]",
-    "duration": "29/06/2026 - 14/08/2026[cite: 1]",
-    "technologies": ["Modèles VLM[cite: 6]", "OCR[cite: 6]", "Claude Opus 5[cite: 11]", "Qwen3-VL[cite: 11]"],
-    "type": "Preuve de Concept (POC) IA[cite: 6]",
+    "title": "Système de lecture de feuilles d'échecs (POC)",
+    "subtitle": "Évaluer la faisabilité de la lecture de feuilles de match manuscrites via l'IA.",
+    "role": "Développeuse Prototypage IA - Stage",
+    "duration": "29/06/2026 - 14/08/2026",
+    "technologies": ["Modèles VLM", "OCR", "Claude Opus 5", "Qwen3-VL"],
+    "type": "Preuve de Concept (POC) IA",
     "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
-    "image_hero_alt": "Interface de l'application de lecture de feuilles d'échecs[cite: 12]",
+    "image_hero_alt": "Interface de l'application de lecture de feuilles d'échecs",
     "image_hero_device": "desktop",
     "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
     "image_context": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b",
     "gallery": [],
     "metrics": [
-      "23 paramètres testés[cite: 9]",
-      "82-85% de réussite avec le meilleur modèle[cite: 9]",
-      "0% de réussite avec les OCR classiques[cite: 9]"
+      "23 paramètres testés",
+      "82-85% de réussite avec le meilleur modèle",
+      "0% de réussite avec les OCR classiques"
     ],
     "highlights": [
-      "Élaboration d'une chaîne de test complète : découpage, prétraitement, lecture et comparaison[cite: 9].",
-      "Comparatif détaillé de plusieurs modèles IA (Qwen, InternVL, Claude) sur la vitesse et la précision[cite: 11]."
+      "Élaboration d'une chaîne de test complète : découpage, prétraitement, lecture et comparaison.",
+      "Comparatif détaillé de plusieurs modèles IA (Qwen, InternVL, Claude) sur la vitesse et la précision."
     ],
-    "context": "L'objectif était de reconstituer une partie d'échecs à partir d'une photo de feuille manuscrite[cite: 9]. Avant d'engager le développement complet, l'entreprise devait valider la faisabilité technique[cite: 6].",
-    "challenge": "La qualité de lecture du modèle sur la page entière (le goulot d'étranglement), et non la validation des règles du jeu[cite: 9, 10].",
-    "solution": "Création d'une note de cadrage, d'une chaîne de test automatisée et d'une interface de correction assistée par les règles du jeu[cite: 9, 14, 15].",
+    "context": "L'objectif était de reconstituer une partie d'échecs à partir d'une photo de feuille manuscrite. Avant d'engager le développement complet, l'entreprise devait valider la faisabilité technique.",
+    "challenge": "La qualité de lecture du modèle sur la page entière (le goulot d'étranglement), et non la validation des règles du jeu.",
+    "solution": "Création d'une note de cadrage, d'une chaîne de test automatisée et d'une interface de correction assistée par les règles du jeu.",
     "approach": [
       {
         "title": "Analyse chiffrée",
-        "description": "Comparaison de 5 approches différentes pour identifier la cause exacte des erreurs de lecture[cite: 9]."
+        "description": "Comparaison de 5 approches différentes pour identifier la cause exacte des erreurs de lecture."
       },
       {
         "title": "Interface Homme-Machine",
-        "description": "Conception d'une interface soumettant uniquement les coups douteux à l'utilisateur humain[cite: 12]."
+        "description": "Conception d'une interface soumettant uniquement les coups douteux à l'utilisateur humain."
       }
     ],
     "code_snippet": "",
@@ -75,138 +75,138 @@
   },
   {
     "slug": "jeux-python",
-    "title": "Les jeux : Pixélisation & Casse-briques[cite: 23]",
-    "subtitle": "Développement de jeux classiques et de devinette[cite: 23].",
-    "role": "Développeuse[cite: 23]",
-    "duration": "2021-2022[cite: 23]",
-    "technologies": ["Python[cite: 23]"],
-    "type": "Jeux Vidéo[cite: 23]",
+    "title": "Les jeux : Pixélisation & Casse-briques",
+    "subtitle": "Développement de jeux classiques et de devinette.",
+    "role": "Développeuse",
+    "duration": "2021-2022",
+    "technologies": ["Python"],
+    "type": "Jeux Vidéo",
     "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
-    "image_hero_alt": "Illustrations rétro de jeux d'arcade et casse-briques[cite: 23]",
+    "image_hero_alt": "Illustrations rétro de jeux d'arcade et casse-briques",
     "image_hero_device": "desktop",
     "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
     "image_context": "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
     "gallery": [],
     "metrics": [],
     "highlights": [
-      "Travail collaboratif en équipe sur la plateforme Capitale[cite: 23].",
-      "Reproduction des mécaniques du jeu Breakout de 1976[cite: 23]."
+      "Travail collaboratif en équipe sur la plateforme Capitale.",
+      "Reproduction des mécaniques du jeu Breakout de 1976."
     ],
-    "context": "Création de deux projets ludiques : un jeu de pixélisation dont le but est de deviner une image avec un minimum de pixels, et un casse-briques inspiré de Pong[cite: 23].",
-    "challenge": "Gérer la logique de collision et de niveaux pour le casse-briques, et identifier les erreurs potentielles sur la plateforme Capitale[cite: 23].",
-    "solution": "Développement complet en Python pour structurer la logique des deux jeux[cite: 23].",
+    "context": "Création de deux projets ludiques : un jeu de pixélisation dont le but est de deviner une image avec un minimum de pixels, et un casse-briques inspiré de Pong.",
+    "challenge": "Gérer la logique de collision et de niveaux pour le casse-briques, et identifier les erreurs potentielles sur la plateforme Capitale.",
+    "solution": "Développement complet en Python pour structurer la logique des deux jeux.",
     "approach": [],
     "code_snippet": "",
     "next_project_slug": "ekoroji"
   },
   {
     "slug": "ekoroji",
-    "title": "EKOROJI[cite: 24]",
-    "subtitle": "Application encourageant le recyclage et la réduction de l'empreinte carbone[cite: 24].",
-    "role": "Développeuse[cite: 24]",
-    "duration": "2022-2023[cite: 24]",
+    "title": "EKOROJI",
+    "subtitle": "Application encourageant le recyclage et la réduction de l'empreinte carbone.",
+    "role": "Développeuse",
+    "duration": "2022-2023",
     "technologies": [],
-    "type": "Application Mobile / Web[cite: 24]",
+    "type": "Application Mobile / Web",
     "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
-    "image_hero_alt": "Logo de l'application Ekoroji[cite: 24]",
+    "image_hero_alt": "Logo de l'application Ekoroji",
     "image_hero_device": "mobile",
     "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
     "image_context": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b",
     "gallery": [],
     "metrics": [],
     "highlights": [
-      "Fonctionnalité pour localiser les points de dépôt d'articles recyclables[cite: 24].",
-      "Suivi de progression écologique pour les utilisateurs[cite: 24]."
+      "Fonctionnalité pour localiser les points de dépôt d'articles recyclables.",
+      "Suivi de progression écologique pour les utilisateurs."
     ],
-    "context": "Ekoroji a été conçue pour encourager le recyclage des objets et aliments usagés au quotidien[cite: 24].",
-    "challenge": "Rendre la démarche écologique engageante en fournissant des astuces claires et un suivi de progression[cite: 24].",
-    "solution": "Mise en place d'une interface listant les matériaux (Bois, Carton, Fer) avec descriptions et guides de tri[cite: 25].",
+    "context": "Ekoroji a été conçue pour encourager le recyclage des objets et aliments usagés au quotidien.",
+    "challenge": "Rendre la démarche écologique engageante en fournissant des astuces claires et un suivi de progression.",
+    "solution": "Mise en place d'une interface listant les matériaux (Bois, Carton, Fer) avec descriptions et guides de tri.",
     "approach": [],
     "code_snippet": "",
     "next_project_slug": "parcheesi"
   },
   {
     "slug": "parcheesi",
-    "title": "Parcheesi[cite: 26]",
-    "subtitle": "Version numérique en terminal du jeu de société classique[cite: 26].",
-    "role": "Développeuse (Projet en équipe)[cite: 26]",
-    "duration": "2023-2024[cite: 26]",
-    "technologies": ["C[cite: 26]", "GitLab[cite: 26]"],
-    "type": "Jeu vidéo dans le terminal[cite: 26]",
+    "title": "Parcheesi",
+    "subtitle": "Version numérique en terminal du jeu de société classique.",
+    "role": "Développeuse (Projet en équipe)",
+    "duration": "2023-2024",
+    "technologies": ["C", "GitLab"],
+    "type": "Jeu vidéo dans le terminal",
     "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
-    "image_hero_alt": "Plateau de jeu Parcheesi[cite: 26]",
+    "image_hero_alt": "Plateau de jeu Parcheesi",
     "image_hero_device": "desktop",
     "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
     "image_context": "https://images.unsplash.com/photo-1611996575749-79a3a250f948",
     "gallery": [],
     "metrics": [],
     "highlights": [
-      "Exécution complète du jeu sans interface graphique[cite: 26].",
-      "Gestion de projet collaborative à 5 étudiants via GitLab[cite: 26]."
+      "Exécution complète du jeu sans interface graphique.",
+      "Gestion de projet collaborative à 5 étudiants via GitLab."
     ],
-    "context": "Le Parcheesi est un jeu de course stratégique et de hasard[cite: 26]. Ce projet visait à développer une version numérique exécutable directement dans le terminal en langage C[cite: 26].",
-    "challenge": "Se concentrer exclusivement sur la logique algorithmique du jeu et la gestion des données sans l'aide d'une interface graphique[cite: 26].",
-    "solution": "Une implémentation robuste en C, structurée autour du travail d'équipe et du versioning[cite: 26].",
+    "context": "Le Parcheesi est un jeu de course stratégique et de hasard. Ce projet visait à développer une version numérique exécutable directement dans le terminal en langage C.",
+    "challenge": "Se concentrer exclusivement sur la logique algorithmique du jeu et la gestion des données sans l'aide d'une interface graphique.",
+    "solution": "Une implémentation robuste en C, structurée autour du travail d'équipe et du versioning.",
     "approach": [],
     "code_snippet": "",
     "next_project_slug": "salon-coiffure"
   },
   {
     "slug": "salon-coiffure",
-    "title": "Site web Salon de Coiffure Couleurs d'Afrique[cite: 27]",
-    "subtitle": "Amélioration de la présence en ligne d'un salon de coiffure africaine à Pau[cite: 27].",
-    "role": "Développeuse & Designer[cite: 27]",
-    "duration": "2025[cite: 27]",
-    "technologies": ["WhatsApp[cite: 28]", "Réseaux Sociaux[cite: 28]"],
-    "type": "Site Web Vitrine & Identité Visuelle[cite: 27]",
+    "title": "Site web Salon de Coiffure Couleurs d'Afrique",
+    "subtitle": "Amélioration de la présence en ligne d'un salon de coiffure africaine à Pau.",
+    "role": "Développeuse & Designer",
+    "duration": "2025",
+    "technologies": ["WhatsApp", "Réseaux Sociaux"],
+    "type": "Site Web Vitrine & Identité Visuelle",
     "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
-    "image_hero_alt": "Page d'accueil du salon Couleurs d'Afrique[cite: 27]",
+    "image_hero_alt": "Page d'accueil du salon Couleurs d'Afrique",
     "image_hero_device": "desktop",
     "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
     "image_context": "https://images.unsplash.com/photo-1522337660859-02fbefca4702",
     "gallery": [],
     "metrics": [],
     "highlights": [
-      "Création du logo en respectant la charte graphique[cite: 27].",
-      "Organisation de la communication multi-canaux (Instagram, TikTok, WhatsApp)[cite: 27, 28]."
+      "Création du logo en respectant la charte graphique.",
+      "Organisation de la communication multi-canaux (Instagram, TikTok, WhatsApp)."
     ],
-    "context": "Projet personnel et professionnel pour améliorer le site web d'une commerçante tenant un salon de coiffure africaine à Pau[cite: 27].",
-    "challenge": "Adapter les propositions aux besoins de la cliente via plusieurs itérations de maquettes, en faisant preuve de réactivité et d'autonomie[cite: 27].",
-    "solution": "Mise en place d'un site présentant les services, les tarifs et un module de prise de rendez-vous en ligne[cite: 27, 28].",
+    "context": "Projet personnel et professionnel pour améliorer le site web d'une commerçante tenant un salon de coiffure africaine à Pau.",
+    "challenge": "Adapter les propositions aux besoins de la cliente via plusieurs itérations de maquettes, en faisant preuve de réactivité et d'autonomie.",
+    "solution": "Mise en place d'un site présentant les services, les tarifs et un module de prise de rendez-vous en ligne.",
     "approach": [],
     "code_snippet": "",
     "next_project_slug": "alb-rh"
   },
   {
     "slug": "alb-rh",
-    "title": "Application web ALB[cite: 29]",
-    "subtitle": "Moderniser et simplifier la gestion des ressources humaines de l'Amicale Laïque de Billère[cite: 29].",
-    "role": "Développeuse Web[cite: 29, 31]",
-    "duration": "2025[cite: 29]",
-    "technologies": ["HTML[cite: 31]", "CSS[cite: 31]", "JavaScript[cite: 31]", "PHP[cite: 31]"],
-    "type": "Application Web RH[cite: 29]",
+    "title": "Application web ALB",
+    "subtitle": "Moderniser et simplifier la gestion des ressources humaines de l'Amicale Laïque de Billère.",
+    "role": "Développeuse Web",
+    "duration": "2025",
+    "technologies": ["HTML", "CSS", "JavaScript", "PHP"],
+    "type": "Application Web RH",
     "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
-    "image_hero_alt": "Interface de session administrateur ALB[cite: 32]",
+    "image_hero_alt": "Interface de session administrateur ALB",
     "image_hero_device": "desktop",
     "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
     "image_context": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
     "gallery": [],
     "metrics": [],
     "highlights": [
-      "Développement éco-conçu pour limiter l'impact environnemental[cite: 31].",
-      "Génération automatique de fiches de présence PDF chaque 25 du mois[cite: 30]."
+      "Développement éco-conçu pour limiter l'impact environnemental.",
+      "Génération automatique de fiches de présence PDF chaque 25 du mois."
     ],
-    "context": "L'Amicale Laïque de Billère souhaitait améliorer le suivi des fiches de paie, des congés, des absences et de la présence de ses salariés[cite: 29].",
-    "challenge": "Créer une plateforme intuitive pour des utilisateurs âgés de 22 à 60 ans, avec un fort accent sur la sécurité des données et l'accessibilité multi-supports[cite: 29, 31].",
-    "solution": "Développement d'une solution sur mesure centralisant les demandes de congés, la gestion des contrats, et offrant un espace d'administration hiérarchisé[cite: 30, 31].",
+    "context": "L'Amicale Laïque de Billère souhaitait améliorer le suivi des fiches de paie, des congés, des absences et de la présence de ses salariés.",
+    "challenge": "Créer une plateforme intuitive pour des utilisateurs âgés de 22 à 60 ans, avec un fort accent sur la sécurité des données et l'accessibilité multi-supports.",
+    "solution": "Développement d'une solution sur mesure centralisant les demandes de congés, la gestion des contrats, et offrant un espace d'administration hiérarchisé.",
     "approach": [
       {
         "title": "Gestion des rôles",
-        "description": "Hiérarchisation des accès : salariés, gestionnaires intermédiaires, et co-présidents[cite: 30]."
+        "description": "Hiérarchisation des accès : salariés, gestionnaires intermédiaires, et co-présidents."
       },
       {
         "title": "Design épuré",
-        "description": "Interface ergonomique et durable pour assurer une prise en main rapide[cite: 31]."
+        "description": "Interface ergonomique et durable pour assurer une prise en main rapide."
       }
     ],
     "code_snippet": "",
@@ -214,26 +214,26 @@
   },
   {
     "slug": "bde-paukerface",
-    "title": "Site Web BDE Paukerface[cite: 34]",
-    "subtitle": "Conception du site vitrine et administratif pour la campagne du Bureau des Étudiants[cite: 34].",
-    "role": "Membre du pôle web[cite: 34]",
-    "duration": "2025[cite: 34]",
-    "technologies": ["PHP[cite: 34]"],
-    "type": "Site Web & Administration[cite: 34]",
+    "title": "Site Web BDE Paukerface",
+    "subtitle": "Conception du site vitrine et administratif pour la campagne du Bureau des Étudiants.",
+    "role": "Membre du pôle web",
+    "duration": "2025",
+    "technologies": ["PHP"],
+    "type": "Site Web & Administration",
     "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
-    "image_hero_alt": "Maquette mobile du site Paukerface[cite: 34]",
+    "image_hero_alt": "Maquette mobile du site Paukerface",
     "image_hero_device": "mobile",
     "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
     "image_context": "https://images.unsplash.com/photo-1511116142106-cc55627685a4",
     "gallery": [],
     "metrics": [],
     "highlights": [
-      "Thématique visuelle forte autour du poker et des jeux d'argent[cite: 34].",
-      "Espace sécurisé permettant l'ajout d'événements et de projets[cite: 34, 36]."
+      "Thématique visuelle forte autour du poker et des jeux d'argent.",
+      "Espace sécurisé permettant l'ajout d'événements et de projets."
     ],
-    "context": "Dans le cadre de l'élection des listes BDE, le pôle web devait concevoir un site internet et un jeu lié à l'univers de la liste \"Paukerface\"[cite: 34].",
-    "challenge": "Assurer la cybersécurité du site web tout en fournissant des fonctionnalités d'administration dynamique[cite: 34].",
-    "solution": "Développement d'un site en PHP intégrant un espace de connexion administrateur et des pages dédiées à la présentation de l'équipe et du programme[cite: 34, 35].",
+    "context": "Dans le cadre de l'élection des listes BDE, le pôle web devait concevoir un site internet et un jeu lié à l'univers de la liste \"Paukerface\".",
+    "challenge": "Assurer la cybersécurité du site web tout en fournissant des fonctionnalités d'administration dynamique.",
+    "solution": "Développement d'un site en PHP intégrant un espace de connexion administrateur et des pages dédiées à la présentation de l'équipe et du programme.",
     "approach": [],
     "code_snippet": "",
     "next_project_slug": null

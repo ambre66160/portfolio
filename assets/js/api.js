@@ -48,7 +48,7 @@ export async function getProjects() {
 			} catch (apiError) {
 				try {
 					const dataUrl = new URL('config/projets.json', document.baseURI);
-					dataUrl.searchParams.set('v', '3');
+					dataUrl.searchParams.set('v', '4');
 					const response = await fetch(dataUrl);
 					if (!response.ok) throw new Error('Les données statiques sont indisponibles.');
 					const projects = await response.json();

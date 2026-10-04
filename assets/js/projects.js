@@ -126,9 +126,7 @@ async function render(root, featuredOnly) {
 	root.setAttribute('aria-busy', 'true');
 	try {
 		const projects = await getProjects();
-		const visibleProjects = featuredOnly
-			? ['ekoroji', 'atelier', 'ambre-portfolio'].map((slug) => projects.find((project) => project.slug === slug)).filter(Boolean)
-			: projects;
+		const visibleProjects = featuredOnly ? projects.slice(0, 3) : projects;
 		const fragment = document.createDocumentFragment();
 		visibleProjects.forEach((project, index) => fragment.append(featuredOnly ? featuredCard(project) : projectListCard(project, index)));
 		root.replaceChildren(fragment);
