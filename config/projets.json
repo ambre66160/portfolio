@@ -1,154 +1,241 @@
 [
   {
-    "slug": "ekoroji",
-    "title": "EKOROJI",
-    "subtitle": "Cuisine de saison, sensibilisation et gestes simples contre le gaspillage alimentaire.",
-    "role": "Lead Dev & UI Designer",
-    "duration": "Oct — Déc 2024",
-    "technologies": ["React", "Node.js", "PostgreSQL"],
-    "type": "Application Web",
-    "image_hero": "assets/images/Ekoroji_light.png",
-    "image_hero_alt": "Écran Explorer de l’application EKOROJI",
-    "image_hero_device": "mobile",
-    "image_banner": "assets/images/download.gif",
-    "image_banner_webp": "assets/images/download.webp",
-    "image_context": "assets/images/Ekoroji_waste_new.png",
-    "gallery": [
-      {
-        "src": "assets/images/Ekoroji_index_2.png",
-        "alt": "Écran Explorer d’EKOROJI avec recherche et ajout de déchets",
-        "caption": "Explorer : rechercher des déchets et ouvrir une fiche pratique.",
-        "kind": "final",
-        "device": "mobile"
-      },
-      {
-        "src": "assets/images/Ekoroji_articles_2.png",
-        "alt": "Écran S’informer avec les articles de sensibilisation d’EKOROJI",
-        "caption": "S’informer : des articles courts pour comprendre le tri.",
-        "kind": "final",
-        "device": "mobile"
-      },
-      {
-        "src": "assets/images/Ekoroji_popular_2.png",
-        "alt": "Écran Communauté avec les déchets les plus recherchés",
-        "caption": "Communauté : repérer les déchets les plus recherchés.",
-        "kind": "final",
-        "device": "mobile"
-      },
-      {
-        "src": "assets/images/Ekoroji_waste_new.png",
-        "alt": "Formulaire mobile pour ajouter un déchet dans EKOROJI",
-        "caption": "Contribution : ajouter une fiche de déchet à la base.",
-        "kind": "final",
-        "device": "mobile"
-      }
-    ],
+    "slug": "noticours",
+    "title": "Site web interactif Noticours[cite: 6]",
+    "subtitle": "Faire vivre le concept de l'application d'apprentissage par micro-notifications[cite: 7].",
+    "role": "Développeuse Web - Stage[cite: 1, 4]",
+    "duration": "29/06/2026 - 14/08/2026[cite: 1]",
+    "technologies": ["React[cite: 17]", "Vite[cite: 17]"],
+    "type": "Site Web Interactif[cite: 6]",
+    "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
+    "image_hero_alt": "Interface d'accueil du site interactif Noticours[cite: 8]",
+    "image_hero_device": "desktop",
+    "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
+    "image_context": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+    "gallery": [],
     "metrics": [],
     "highlights": [
-      "Suggestions de recettes à partir des ingrédients disponibles.",
-      "Contenus de saison et conseils anti-gaspillage réunis dans le parcours.",
-      "Interface responsive construite autour de composants réutilisables."
+      "Parcours interactif en cinq étapes : flashcards, quiz, cartes, progression, classement[cite: 7].",
+      "Système de gamification avec neuf badges à débloquer[cite: 7]."
     ],
-    "context": "Les équipes et les particuliers ont souvent envie de cuisiner plus responsable, mais manquent de temps pour trouver des recettes adaptées à leurs produits et à leur calendrier. EKOROJI rassemble des idées de saison, des conseils pratiques et des ressources autour de l'anti-gaspillage. L'enjeu était de transformer une intention écologique en gestes accessibles, sans ajouter de complexité au quotidien.",
-    "challenge": "Rendre de nombreuses ressources immédiatement compréhensibles sans transformer la page en catalogue dense. Chaque écran devait guider vers une action utile tout en gardant une identité éditoriale chaleureuse.",
-    "solution": "J'ai travaillé la hiérarchie des contenus, réduit les étapes de navigation et conçu des composants lisibles sur mobile. La performance et la réutilisation des composants ont été intégrées dès la conception.",
+    "context": "Noticours développe une application d'apprentissage[cite: 6]. Il lui fallait un site capable de présenter et de faire essayer le concept aux visiteurs avant de télécharger l'application[cite: 6, 7].",
+    "challenge": "Développer une architecture monopage difficile à référencer tout en respectant un design system fourni, et en garantissant la maintenabilité du code[cite: 7].",
+    "solution": "Création d'un socle technique organisé par fonctionnalité sur sept pages, intégrant un parcours interactif évolutif où chaque étape se nourrit des résultats de la précédente[cite: 7].",
     "approach": [
-      {"title": "Composants React", "description": "Des blocs d'interface réutilisables pour garder une expérience cohérente et faciliter les évolutions."},
-      {"title": "Architecture claire", "description": "Une séparation nette entre présentation, accès aux données et règles métier."},
-      {"title": "Indexation & cache", "description": "Des requêtes ciblées et des contenus mis en cache pour réduire l'attente."}
+      {
+        "title": "Gamification",
+        "description": "Intégration d'un compteur de badges visible en permanence et conservé entre les visites[cite: 7]."
+      },
+      {
+        "title": "Architecture",
+        "description": "Aucune dépendance technique ajoutée sans qu'un problème réel la justifie[cite: 7]."
+      }
     ],
-    "code_snippet": "const suggestRecipes = (ingredients, recipes) => {\n  const available = new Set(ingredients.map((item) => item.name));\n  return recipes\n    .map((recipe) => ({\n      ...recipe,\n      match: recipe.ingredients.filter((name) => available.has(name)).length\n    }))\n    .sort((a, b) => b.match - a.match);\n};",
-    "next_project_slug": "marmiton-numerique"
+    "code_snippet": "",
+    "next_project_slug": "poc-echecs"
   },
   {
-    "slug": "marmiton-numerique",
-    "title": "Le Marmiton Numérique",
-    "subtitle": "Une gestion de stocks plus fine pour imaginer des menus de saison sans perdre une miette.",
-    "role": "Développeuse Fullstack & Lead Architect",
-    "duration": "Projet pilote · 2025",
-    "technologies": ["React", "NestJS", "PostgreSQL", "Tailwind"],
-    "type": "Application Web · Foodtech",
-    "image_hero": null,
-    "image_context": null,
-    "metrics": [],
-    "context": "En restauration, les informations de stock se dispersent vite entre les commandes, les réserves et les menus. Il devient difficile de savoir quoi utiliser en priorité et d'ajuster les quantités au bon moment. Le Marmiton Numérique centralise les produits, leur disponibilité et leur date limite afin d'aider les équipes à anticiper leurs besoins et à composer leurs menus avec plus de précision.",
-    "challenge": "Garder les stocks fiables sans ralentir le travail en cuisine. Une interface trop détaillée coûte du temps ; une interface trop simple masque les dates et quantités critiques.",
-    "solution": "Mettre en avant les informations qui changent la décision : urgence, quantité et possibilité d'intégration à un menu. Les mises à jour restent courtes et les règles métier sont contrôlées côté API.",
-    "approach": [
-      {"title": "Interface React", "description": "Des vues réutilisables et des états visuels clairs pour consulter et mettre à jour les produits."},
-      {"title": "API NestJS", "description": "Des responsabilités séparées et des validations centralisées pour fiabiliser les mouvements de stock."},
-      {"title": "Indexation PostgreSQL", "description": "Des recherches efficaces sur les dates, catégories et niveaux de disponibilité."}
+    "slug": "poc-echecs",
+    "title": "Système de lecture de feuilles d'échecs (POC)[cite: 6]",
+    "subtitle": "Évaluer la faisabilité de la lecture de feuilles de match manuscrites via l'IA[cite: 9].",
+    "role": "Développeuse Prototypage IA - Stage[cite: 1, 4]",
+    "duration": "29/06/2026 - 14/08/2026[cite: 1]",
+    "technologies": ["Modèles VLM[cite: 6]", "OCR[cite: 6]", "Claude Opus 5[cite: 11]", "Qwen3-VL[cite: 11]"],
+    "type": "Preuve de Concept (POC) IA[cite: 6]",
+    "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
+    "image_hero_alt": "Interface de l'application de lecture de feuilles d'échecs[cite: 12]",
+    "image_hero_device": "desktop",
+    "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
+    "image_context": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b",
+    "gallery": [],
+    "metrics": [
+      "23 paramètres testés[cite: 9]",
+      "82-85% de réussite avec le meilleur modèle[cite: 9]",
+      "0% de réussite avec les OCR classiques[cite: 9]"
     ],
-    "code_snippet": "type StockItem = {\n  name: string;\n  expiresAt: Date;\n  quantity: number;\n};\n\nconst prioritizeStock = (items: StockItem[]) =>\n  items\n    .filter((item) => item.quantity > 0)\n    .sort((a, b) => a.expiresAt.getTime() - b.expiresAt.getTime());",
-    "next_project_slug": "sapor"
+    "highlights": [
+      "Élaboration d'une chaîne de test complète : découpage, prétraitement, lecture et comparaison[cite: 9].",
+      "Comparatif détaillé de plusieurs modèles IA (Qwen, InternVL, Claude) sur la vitesse et la précision[cite: 11]."
+    ],
+    "context": "L'objectif était de reconstituer une partie d'échecs à partir d'une photo de feuille manuscrite[cite: 9]. Avant d'engager le développement complet, l'entreprise devait valider la faisabilité technique[cite: 6].",
+    "challenge": "La qualité de lecture du modèle sur la page entière (le goulot d'étranglement), et non la validation des règles du jeu[cite: 9, 10].",
+    "solution": "Création d'une note de cadrage, d'une chaîne de test automatisée et d'une interface de correction assistée par les règles du jeu[cite: 9, 14, 15].",
+    "approach": [
+      {
+        "title": "Analyse chiffrée",
+        "description": "Comparaison de 5 approches différentes pour identifier la cause exacte des erreurs de lecture[cite: 9]."
+      },
+      {
+        "title": "Interface Homme-Machine",
+        "description": "Conception d'une interface soumettant uniquement les coups douteux à l'utilisateur humain[cite: 12]."
+      }
+    ],
+    "code_snippet": "",
+    "next_project_slug": "jeux-python"
   },
   {
-    "slug": "sapor",
-    "title": "Sapor — L'Éco-Calculateur",
-    "subtitle": "Comparer l'impact des ingrédients et imaginer des alternatives de saison sans sacrifier le goût.",
-    "role": "Développeuse Fullstack",
-    "duration": "Projet web · 2025",
-    "technologies": ["React", "NestJS", "PostgreSQL", "Tailwind"],
-    "type": "Application Web · Éco-conception",
-    "image_hero": null,
-    "image_context": null,
+    "slug": "jeux-python",
+    "title": "Les jeux : Pixélisation & Casse-briques[cite: 23]",
+    "subtitle": "Développement de jeux classiques et de devinette[cite: 23].",
+    "role": "Développeuse[cite: 23]",
+    "duration": "2021-2022[cite: 23]",
+    "technologies": ["Python[cite: 23]"],
+    "type": "Jeux Vidéo[cite: 23]",
+    "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
+    "image_hero_alt": "Illustrations rétro de jeux d'arcade et casse-briques[cite: 23]",
+    "image_hero_device": "desktop",
+    "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
+    "image_context": "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
+    "gallery": [],
     "metrics": [],
-    "context": "Les données environnementales sont souvent difficiles à relier aux choix du quotidien. Sapor propose de comparer l'empreinte carbone d'une recette et de découvrir des alternatives de saison dans une interface compréhensible.",
-    "challenge": "Présenter des données d'impact complexes sans donner une impression de précision trompeuse ni alourdir le parcours de comparaison.",
-    "solution": "Mettre les indicateurs en contexte, comparer les recettes côte à côte et présenter les alternatives avec des informations lisibles et utiles à la décision.",
-    "approach": [
-      {"title": "Comparaison lisible", "description": "Des indicateurs rapprochés des recettes pour visualiser l'écart d'impact."},
-      {"title": "API structurée", "description": "Une séparation claire entre calculs, données et composants de présentation."},
-      {"title": "Interface accessible", "description": "Une hiérarchie visuelle qui facilite la lecture des résultats et des alternatives."}
+    "highlights": [
+      "Travail collaboratif en équipe sur la plateforme Capitale[cite: 23].",
+      "Reproduction des mécaniques du jeu Breakout de 1976[cite: 23]."
     ],
-    "code_snippet": "const compareImpact = (recipe, alternative) => ({\n  difference: recipe.impact - alternative.impact,\n  reduction: Math.round(\n    ((recipe.impact - alternative.impact) / recipe.impact) * 100\n  )\n});",
-    "next_project_slug": "atelier"
-  },
-  {
-    "slug": "atelier",
-    "title": "Atelier",
-    "subtitle": "Un espace de travail léger pour rassembler idées, notes et avancées d'équipe.",
-    "role": "Développeuse Full Stack",
-    "duration": "Projet web · 2025",
-    "technologies": ["React", "Java", "SQL"],
-    "type": "Application Web · Collaboration",
-    "image_hero": null,
-    "image_context": null,
-    "metrics": [],
-    "context": "Les idées, notes et tâches d'un projet se retrouvent souvent dispersées entre plusieurs outils. Atelier réunit ces éléments dans un espace partagé et facile à parcourir.",
-    "challenge": "Conserver une interface simple tout en permettant à une équipe de suivre les notes et les avancées d'un projet.",
-    "solution": "Organiser le contenu en blocs courts et proposer un espace de travail centralisé, soutenu par une interface React et une persistance SQL.",
-    "approach": [
-      {"title": "Interface React", "description": "Des composants réutilisables pour organiser notes et espaces de projet."},
-      {"title": "Services Java", "description": "Une logique métier séparée pour gérer les données et les interactions."},
-      {"title": "Données SQL", "description": "Une structure relationnelle pour conserver les informations de façon cohérente."}
-    ],
-    "code_snippet": "const groupNotesByProject = (notes) =>\n  notes.reduce((groups, note) => {\n    const project = note.projectId;\n    groups[project] ??= [];\n    groups[project].push(note);\n    return groups;\n  }, {});",
-    "next_project_slug": "ambre-portfolio"
-  },
-  {
-    "slug": "ambre-portfolio",
-    "title": "Ambre — Portfolio",
-    "subtitle": "Une vitrine personnelle qui donne une place égale au caractère et à la lisibilité.",
-    "role": "Conception & développement",
-    "duration": "2026",
-    "technologies": ["HTML", "CSS", "JavaScript", "PHP"],
-    "type": "Site Web · Portfolio",
-    "image_hero": null,
-    "image_context": null,
-    "metrics": [],
-    "context": "Le portfolio devait présenter parcours, compétences et projets dans un univers éditorial cohérent, tout en restant rapide et confortable à consulter sur mobile.",
-    "challenge": "Construire une identité visuelle reconnaissable tout en évitant la duplication des pages et en gardant une navigation claire.",
-    "solution": "Des pages HTML statiques consomment une API PHP JSON pour les projets et le contact. Les vues, les interactions client et les responsabilités serveur restent séparées.",
-    "approach": [
-      {"title": "Composants partagés", "description": "Un header et un footer communs pour toutes les pages du site."},
-      {"title": "Données centralisées", "description": "Une source JSON unique pour alimenter galerie et études de cas."},
-      {"title": "Design responsive", "description": "Une grille et une typographie adaptées aux différents formats d'écran."}
-    ],
-    "code_snippet": "const response = await fetch('/api/projects.php');\nconst { data: projects } = await response.json();\n\nconst title = document.createElement('h2');\ntitle.textContent = projects[0].title;",
-    "links": [
-      {"label": "Code source", "url": "https://github.com/ambre66160/portfolio"}
-    ],
+    "context": "Création de deux projets ludiques : un jeu de pixélisation dont le but est de deviner une image avec un minimum de pixels, et un casse-briques inspiré de Pong[cite: 23].",
+    "challenge": "Gérer la logique de collision et de niveaux pour le casse-briques, et identifier les erreurs potentielles sur la plateforme Capitale[cite: 23].",
+    "solution": "Développement complet en Python pour structurer la logique des deux jeux[cite: 23].",
+    "approach": [],
+    "code_snippet": "",
     "next_project_slug": "ekoroji"
+  },
+  {
+    "slug": "ekoroji",
+    "title": "EKOROJI[cite: 24]",
+    "subtitle": "Application encourageant le recyclage et la réduction de l'empreinte carbone[cite: 24].",
+    "role": "Développeuse[cite: 24]",
+    "duration": "2022-2023[cite: 24]",
+    "technologies": [],
+    "type": "Application Mobile / Web[cite: 24]",
+    "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
+    "image_hero_alt": "Logo de l'application Ekoroji[cite: 24]",
+    "image_hero_device": "mobile",
+    "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
+    "image_context": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b",
+    "gallery": [],
+    "metrics": [],
+    "highlights": [
+      "Fonctionnalité pour localiser les points de dépôt d'articles recyclables[cite: 24].",
+      "Suivi de progression écologique pour les utilisateurs[cite: 24]."
+    ],
+    "context": "Ekoroji a été conçue pour encourager le recyclage des objets et aliments usagés au quotidien[cite: 24].",
+    "challenge": "Rendre la démarche écologique engageante en fournissant des astuces claires et un suivi de progression[cite: 24].",
+    "solution": "Mise en place d'une interface listant les matériaux (Bois, Carton, Fer) avec descriptions et guides de tri[cite: 25].",
+    "approach": [],
+    "code_snippet": "",
+    "next_project_slug": "parcheesi"
+  },
+  {
+    "slug": "parcheesi",
+    "title": "Parcheesi[cite: 26]",
+    "subtitle": "Version numérique en terminal du jeu de société classique[cite: 26].",
+    "role": "Développeuse (Projet en équipe)[cite: 26]",
+    "duration": "2023-2024[cite: 26]",
+    "technologies": ["C[cite: 26]", "GitLab[cite: 26]"],
+    "type": "Jeu vidéo dans le terminal[cite: 26]",
+    "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
+    "image_hero_alt": "Plateau de jeu Parcheesi[cite: 26]",
+    "image_hero_device": "desktop",
+    "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
+    "image_context": "https://images.unsplash.com/photo-1611996575749-79a3a250f948",
+    "gallery": [],
+    "metrics": [],
+    "highlights": [
+      "Exécution complète du jeu sans interface graphique[cite: 26].",
+      "Gestion de projet collaborative à 5 étudiants via GitLab[cite: 26]."
+    ],
+    "context": "Le Parcheesi est un jeu de course stratégique et de hasard[cite: 26]. Ce projet visait à développer une version numérique exécutable directement dans le terminal en langage C[cite: 26].",
+    "challenge": "Se concentrer exclusivement sur la logique algorithmique du jeu et la gestion des données sans l'aide d'une interface graphique[cite: 26].",
+    "solution": "Une implémentation robuste en C, structurée autour du travail d'équipe et du versioning[cite: 26].",
+    "approach": [],
+    "code_snippet": "",
+    "next_project_slug": "salon-coiffure"
+  },
+  {
+    "slug": "salon-coiffure",
+    "title": "Site web Salon de Coiffure Couleurs d'Afrique[cite: 27]",
+    "subtitle": "Amélioration de la présence en ligne d'un salon de coiffure africaine à Pau[cite: 27].",
+    "role": "Développeuse & Designer[cite: 27]",
+    "duration": "2025[cite: 27]",
+    "technologies": ["WhatsApp[cite: 28]", "Réseaux Sociaux[cite: 28]"],
+    "type": "Site Web Vitrine & Identité Visuelle[cite: 27]",
+    "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
+    "image_hero_alt": "Page d'accueil du salon Couleurs d'Afrique[cite: 27]",
+    "image_hero_device": "desktop",
+    "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
+    "image_context": "https://images.unsplash.com/photo-1522337660859-02fbefca4702",
+    "gallery": [],
+    "metrics": [],
+    "highlights": [
+      "Création du logo en respectant la charte graphique[cite: 27].",
+      "Organisation de la communication multi-canaux (Instagram, TikTok, WhatsApp)[cite: 27, 28]."
+    ],
+    "context": "Projet personnel et professionnel pour améliorer le site web d'une commerçante tenant un salon de coiffure africaine à Pau[cite: 27].",
+    "challenge": "Adapter les propositions aux besoins de la cliente via plusieurs itérations de maquettes, en faisant preuve de réactivité et d'autonomie[cite: 27].",
+    "solution": "Mise en place d'un site présentant les services, les tarifs et un module de prise de rendez-vous en ligne[cite: 27, 28].",
+    "approach": [],
+    "code_snippet": "",
+    "next_project_slug": "alb-rh"
+  },
+  {
+    "slug": "alb-rh",
+    "title": "Application web ALB[cite: 29]",
+    "subtitle": "Moderniser et simplifier la gestion des ressources humaines de l'Amicale Laïque de Billère[cite: 29].",
+    "role": "Développeuse Web[cite: 29, 31]",
+    "duration": "2025[cite: 29]",
+    "technologies": ["HTML[cite: 31]", "CSS[cite: 31]", "JavaScript[cite: 31]", "PHP[cite: 31]"],
+    "type": "Application Web RH[cite: 29]",
+    "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
+    "image_hero_alt": "Interface de session administrateur ALB[cite: 32]",
+    "image_hero_device": "desktop",
+    "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
+    "image_context": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+    "gallery": [],
+    "metrics": [],
+    "highlights": [
+      "Développement éco-conçu pour limiter l'impact environnemental[cite: 31].",
+      "Génération automatique de fiches de présence PDF chaque 25 du mois[cite: 30]."
+    ],
+    "context": "L'Amicale Laïque de Billère souhaitait améliorer le suivi des fiches de paie, des congés, des absences et de la présence de ses salariés[cite: 29].",
+    "challenge": "Créer une plateforme intuitive pour des utilisateurs âgés de 22 à 60 ans, avec un fort accent sur la sécurité des données et l'accessibilité multi-supports[cite: 29, 31].",
+    "solution": "Développement d'une solution sur mesure centralisant les demandes de congés, la gestion des contrats, et offrant un espace d'administration hiérarchisé[cite: 30, 31].",
+    "approach": [
+      {
+        "title": "Gestion des rôles",
+        "description": "Hiérarchisation des accès : salariés, gestionnaires intermédiaires, et co-présidents[cite: 30]."
+      },
+      {
+        "title": "Design épuré",
+        "description": "Interface ergonomique et durable pour assurer une prise en main rapide[cite: 31]."
+      }
+    ],
+    "code_snippet": "",
+    "next_project_slug": "bde-paukerface"
+  },
+  {
+    "slug": "bde-paukerface",
+    "title": "Site Web BDE Paukerface[cite: 34]",
+    "subtitle": "Conception du site vitrine et administratif pour la campagne du Bureau des Étudiants[cite: 34].",
+    "role": "Membre du pôle web[cite: 34]",
+    "duration": "2025[cite: 34]",
+    "technologies": ["PHP[cite: 34]"],
+    "type": "Site Web & Administration[cite: 34]",
+    "image_hero": "https://www.canva.com/design/DAGywE4iU-Y/ZPb9sIx2VSfie_k7cJx_mA/edit",
+    "image_hero_alt": "Maquette mobile du site Paukerface[cite: 34]",
+    "image_hero_device": "mobile",
+    "image_banner": "https://www.canva.com/design/DAHQ3YrXWcI/kI0-1rKErgElMLzH3wEoFg/edit",
+    "image_context": "https://images.unsplash.com/photo-1511116142106-cc55627685a4",
+    "gallery": [],
+    "metrics": [],
+    "highlights": [
+      "Thématique visuelle forte autour du poker et des jeux d'argent[cite: 34].",
+      "Espace sécurisé permettant l'ajout d'événements et de projets[cite: 34, 36]."
+    ],
+    "context": "Dans le cadre de l'élection des listes BDE, le pôle web devait concevoir un site internet et un jeu lié à l'univers de la liste \"Paukerface\"[cite: 34].",
+    "challenge": "Assurer la cybersécurité du site web tout en fournissant des fonctionnalités d'administration dynamique[cite: 34].",
+    "solution": "Développement d'un site en PHP intégrant un espace de connexion administrateur et des pages dédiées à la présentation de l'équipe et du programme[cite: 34, 35].",
+    "approach": [],
+    "code_snippet": "",
+    "next_project_slug": null
   }
 ]
