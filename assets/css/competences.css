@@ -1,10 +1,15 @@
 .competences-page {
+    display: flex;
+    min-height: 100vh;
+    min-height: 100svh;
+    flex-direction: column;
     background: var(--color-cream);
     --skill-accent: var(--color-wine);
     --skill-border: rgba(41, 25, 24, 0.12);
 }
 
 .competences-main {
+    flex: 1;
     width: min(100%, 1440px);
     margin-inline: auto;
     padding: clamp(4.5rem, 8vw, 7.5rem) var(--page-gutter) clamp(5rem, 9vw, 8rem);
