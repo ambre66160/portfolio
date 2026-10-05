@@ -16,7 +16,9 @@
     <title>Compétences — Ambre, Dev &amp; Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="assets/css/site.css">
     <link rel="stylesheet" href="assets/css/competences.css">
     <script type="module" src="assets/js/main.js"></script>
@@ -26,15 +28,80 @@
 <div data-site-header></div>
 <main class="competences-main" id="main-content" tabindex="-1">
     <section class="competences-intro" aria-labelledby="competences-title">
-        <p class="competences-intro__eyebrow"><span></span> Mon arsenal</p>
-        <h1 id="competences-title">Compétences et softskills<span>.</span></h1>
-        <p class="competences-intro__text">Des bases solides, des outils choisis avec soin et une façon de travailler attentive aux détails comme aux personnes.</p>
+        <p class="competences-intro__eyebrow"><span></span> Compétences</p>
+        <h1 id="competences-title">Des outils pour donner forme aux idées<span>.</span></h1>
+        <p class="competences-intro__text">Du code aux choix d’interface, un éventail de technologies et de savoir-être au service de projets utiles et soignés.</p>
     </section>
+    <!-- Les logos sont decoratifs ; les libelles visibles portent les noms accessibles. -->
     <section class="skills-grid" aria-label="Compétences techniques et humaines">
-        <article class="skill-card"><header class="skill-card__header"><span class="skill-card__icon skill-card__icon--code" aria-hidden="true">&lt;/&gt;</span><h2>Langages &amp; Fondations</h2></header><ul class="skill-card__badges" aria-label="Langages et fondations"><li>TypeScript</li><li>JavaScript ES6</li><li>Python</li><li>SQL</li><li>C++ / C</li></ul></article>
-        <article class="skill-card"><header class="skill-card__header"><span class="skill-card__icon skill-card__icon--frameworks" aria-hidden="true">▦</span><h2>Frameworks &amp; Librairies</h2></header><ul class="skill-card__badges" aria-label="Frameworks et librairies"><li>React.js</li><li>Next.js</li><li>NestJS</li><li>Node.js</li><li>Tailwind CSS</li></ul></article>
-        <article class="skill-card"><header class="skill-card__header"><span class="skill-card__icon skill-card__icon--tools" aria-hidden="true">⚙</span><h2>Outils &amp; Déploiement</h2></header><ul class="skill-card__badges" aria-label="Outils et déploiement"><li>Git &amp; GitHub</li><li>Docker</li><li>PostgreSQL</li><li>Figma</li><li>Linux / Bash</li></ul></article>
-        <article class="skill-card"><header class="skill-card__header"><span class="skill-card__icon skill-card__icon--soft" aria-hidden="true">♥</span><h2>Savoir-être <span>(Soft Skills)</span></h2></header><ul class="skill-card__badges" aria-label="Savoir-être"><li>Sens de l'esthétique</li><li>Rigueur d'artisan</li><li>Écoute active</li><li>Autonomie</li><li>Esprit d'équipe</li></ul></article>
+        <article class="skill-card">
+            <header class="skill-card__header">
+                <span class="skill-card__index" aria-hidden="true">01</span>
+                <div><p class="skill-card__eyebrow">Écrire</p><h2>Langages &amp; web</h2></div>
+            </header>
+            <ul class="skill-card__badges" aria-label="Langages et technologies web">
+                <li><i class="devicon devicon-html5-plain colored" aria-hidden="true"></i><span>HTML5</span></li>
+                <li><i class="devicon devicon-css3-plain colored" aria-hidden="true"></i><span>CSS3</span></li>
+                <li><i class="devicon devicon-typescript-plain colored" aria-hidden="true"></i><span>TypeScript</span></li>
+                <li><i class="devicon devicon-javascript-plain colored" aria-hidden="true"></i><span>JavaScript</span></li>
+                <li><i class="devicon devicon-python-plain colored" aria-hidden="true"></i><span>Python</span></li>
+                <li><i class="devicon devicon-php-plain colored" aria-hidden="true"></i><span>PHP</span></li>
+                <li><i class="devicon devicon-c-plain colored" aria-hidden="true"></i><span>C</span></li>
+                <li><i class="devicon devicon-cplusplus-plain colored" aria-hidden="true"></i><span>C++</span></li>
+            </ul>
+        </article>
+        <article class="skill-card">
+            <header class="skill-card__header">
+                <span class="skill-card__index" aria-hidden="true">02</span>
+                <div><p class="skill-card__eyebrow">Construire</p><h2>Frameworks &amp; librairies</h2></div>
+            </header>
+            <ul class="skill-card__badges" aria-label="Frameworks et librairies">
+                <li><i class="devicon devicon-react-original colored" aria-hidden="true"></i><span>React</span></li>
+                <li><i class="devicon devicon-nextjs-plain" aria-hidden="true"></i><span>Next.js</span></li>
+                <li><i class="devicon devicon-nestjs-plain colored" aria-hidden="true"></i><span>NestJS</span></li>
+                <li><i class="devicon devicon-nodejs-plain colored" aria-hidden="true"></i><span>Node.js</span></li>
+                <li><i class="devicon devicon-tailwindcss-original colored" aria-hidden="true"></i><span>Tailwind CSS</span></li>
+                <li><i class="devicon devicon-spring-original colored" aria-hidden="true"></i><span>Spring Boot</span></li>
+                <li><i class="devicon devicon-qt-plain colored" aria-hidden="true"></i><span>PySide / Qt</span></li>
+                <li><i class="devicon devicon-threejs-original" aria-hidden="true"></i><span>Three.js</span></li>
+            </ul>
+        </article>
+        <article class="skill-card">
+            <header class="skill-card__header">
+                <span class="skill-card__index" aria-hidden="true">03</span>
+                <div><p class="skill-card__eyebrow">Structurer</p><h2>Données</h2></div>
+            </header>
+            <ul class="skill-card__badges" aria-label="Bases de données">
+                <li><i class="devicon devicon-postgresql-plain colored" aria-hidden="true"></i><span>PostgreSQL</span></li>
+                <li><span class="skill-card__text-mark" aria-hidden="true">SQL</span><span>SQL</span></li>
+            </ul>
+        </article>
+        <article class="skill-card">
+            <header class="skill-card__header">
+                <span class="skill-card__index" aria-hidden="true">04</span>
+                <div><p class="skill-card__eyebrow">Déployer</p><h2>Outils &amp; DevOps</h2></div>
+            </header>
+            <ul class="skill-card__badges" aria-label="Outils et environnement de développement">
+                <li><i class="devicon devicon-git-plain colored" aria-hidden="true"></i><span>Git &amp; GitHub</span></li>
+                <li><i class="devicon devicon-docker-plain colored" aria-hidden="true"></i><span>Docker</span></li>
+                <li><i class="devicon devicon-linux-plain" aria-hidden="true"></i><span>Linux</span></li>
+                <li><i class="devicon devicon-bash-plain" aria-hidden="true"></i><span>Bash</span></li>
+                <li><i class="devicon devicon-figma-plain colored" aria-hidden="true"></i><span>Figma</span></li>
+            </ul>
+        </article>
+        <article class="skill-card skill-card--soft">
+            <header class="skill-card__header">
+                <span class="skill-card__index" aria-hidden="true">05</span>
+                <div><p class="skill-card__eyebrow">Collaborer</p><h2>Savoir-être</h2></div>
+            </header>
+            <ul class="skill-card__badges" aria-label="Savoir-être">
+                <li><span>Sens de l’esthétique</span></li>
+                <li><span>Rigueur d’artisan</span></li>
+                <li><span>Écoute active</span></li>
+                <li><span>Autonomie</span></li>
+                <li><span>Esprit d’équipe</span></li>
+            </ul>
+        </article>
     </section>
 </main>
 <div data-site-footer></div>
