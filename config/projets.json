@@ -231,10 +231,83 @@
       "Thématique visuelle forte autour du poker et des jeux d'argent.",
       "Espace sécurisé permettant l'ajout d'événements et de projets."
     ],
-    "context": "Dans le cadre de l'élection des listes BDE, le pôle web devait concevoir un site internet et un jeu lié à l'univers de la liste \"Paukerface\".",
+    "context": "Dans le cadre de l'élection des listes BDE, le pôle web devait concevoir un site internet et un jeu lié à l'univers de la liste « Paukerface ».",
     "challenge": "Assurer la cybersécurité du site web tout en fournissant des fonctionnalités d'administration dynamique.",
     "solution": "Développement d'un site en PHP intégrant un espace de connexion administrateur et des pages dédiées à la présentation de l'équipe et du programme.",
     "approach": [],
+    "code_snippet": "",
+    "next_project_slug": "flag-quizz"
+  },
+  {
+    "slug": "flag-quizz",
+    "title": "Flag Quizz",
+    "subtitle": "Application de quiz graphique sur les drapeaux de 195 États souverains.",
+    "role": "Développeuse",
+    "duration": "2026",
+    "technologies": ["Python", "PySide6", "Qt"],
+    "type": "Application Desktop",
+    "image_hero": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1",
+    "image_hero_alt": "Interface de l'application Flag Quizz",
+    "image_hero_device": "desktop",
+    "image_banner": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1",
+    "image_context": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1",
+    "gallery": [],
+    "metrics": [
+      "195 États souverains intégrés"
+    ],
+    "highlights": [
+      "Interface graphique soignée développée avec PySide6.",
+      "Personnalisation visuelle dynamique avec palettes de couleurs au choix.",
+      "Gestion complète des assets visuels des drapeaux à travers le monde."
+    ],
+    "context": "Développement d'une application desktop en Python permettant de tester ses connaissances géographiques grâce à un quiz interactif sur les drapeaux du monde entier.",
+    "challenge": "Gérer efficacement le chargement des visuels pour 195 pays tout en offrant une interface utilisateur réactive et personnalisable.",
+    "solution": "Conception d'une architecture modulaire sous PySide6 intégrant un système de score et une gestion fluide des thèmes.",
+    "approach": [
+      {
+        "title": "Design UI/UX",
+        "description": "Elaboration d'une interface claire et dynamique personnalisable selon les préférences de l'utilisateur."
+      }
+    ],
+    "code_snippet": "",
+    "next_project_slug": "reading-lounge"
+  },
+  {
+    "slug": "reading-lounge",
+    "title": "Reading Lounge — Cozy Reading Tracker",
+    "subtitle": "Application web de suivi de lecture, d'habitudes et d'ambiance sonore réconfortante.",
+    "role": "Développeuse Front-End & Designer",
+    "duration": "2026",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "GSAP"],
+    "type": "Application Web",
+    "image_hero": "fond.jpg",
+    "image_hero_alt": "Interface du cocon littéraire Reading Lounge",
+    "image_hero_device": "desktop",
+    "image_banner": "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+    "image_context": "https://images.unsplash.com/photo-1507842217343-583bb7270b66",
+    "gallery": [],
+    "metrics": [
+      "Suivi visuel des habitudes sur 31 jours",
+      "Lecteur d'ambiance sonore intégré"
+    ],
+    "highlights": [
+      "Design System « Cozy & Girly » combinant effet glassmorphism et animations GSAP.",
+      "Module « TBR Wheel » pour piocher aléatoirement la prochaine lecture dans sa PAL.",
+      "Lecteur audio interactif avec ambiances sonores (pluie cozy, feu de bois)."
+    ],
+    "context": "Création d'un espace web chaleureux destiné aux passionnés de lecture pour suivre leurs objectifs annuels, piloter leurs habitudes mensuelles et gérer leur pile à lire.",
+    "challenge": "Créer un visuel d'inspiration glassmorphic épuré tout en assurant une interactivité complète (habitudes, générateur aléatoire, suivi de progression) en Vanilla JavaScript.",
+    "solution": "Mise en place d'un dashboard responsive avec persistance des données via localStorage et micro-interactions animées via GSAP.",
+    "approach": [
+      {
+        "title": "Design System",
+        "description": "Création d'une identité visuelle réconfortante axée sur la lisibilité et l'immersion."
+      },
+      {
+        "title": "Persistance locale",
+        "description": "Stockage automatique des livres enregistrés, des avis et des sessions de lecture mensuelles."
+      }
+    ],
     "code_snippet": "",
     "next_project_slug": null
   }
