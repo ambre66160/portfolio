@@ -5,6 +5,18 @@ import { basename, dirname, resolve } from 'node:path';
 
 const IMAGE_PREFIX = 'assets/images/';
 const PROJECTS_PATH = 'config/projets.json';
+const SECURITY_POLICY = [
+    "default-src 'self'",
+    "base-uri 'self'",
+    "object-src 'none'",
+    "form-action 'self'",
+    "script-src 'self'",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
+    "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:",
+    "img-src 'self' data: blob:",
+    "connect-src 'self' https://api.emailjs.com",
+    "upgrade-insecure-requests",
+].join('; ');
 
 const copyToDist = (relativePath) => {
     const outputPath = resolve('dist', relativePath);
@@ -34,6 +46,21 @@ const copyProjectData = {
     },
 };
 
+const securityMetadata = {
+    name: 'security-metadata',
+    apply: 'build',
+    transformIndexHtml: {
+        order: 'pre',
+        handler(html) {
+            const metadata = [
+                `<meta http-equiv="Content-Security-Policy" content="${SECURITY_POLICY}">`,
+                '<meta name="referrer" content="strict-origin-when-cross-origin">',
+            ].join('\n    ');
+            return html.replace('<head>', `<head>\n    ${metadata}`);
+        },
+    },
+};
+
 const pages = Object.fromEntries(
     readdirSync('.')
         .filter((file) => file.endsWith('.html'))
@@ -42,7 +69,7 @@ const pages = Object.fromEntries(
 
 export default defineConfig({
     base: './',
-    plugins: [motionStudio(), copyProjectData],
+    plugins: [motionStudio(), copyProjectData, securityMetadata],
     server: {
         host: '127.0.0.1',
         port: 5173,

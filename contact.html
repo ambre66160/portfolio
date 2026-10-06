@@ -37,17 +37,18 @@
                 <a class="contact-detail" href="tel:+33778947558"><span class="contact-detail__icon" aria-hidden="true">☎</span><span><small>Téléphone</small><strong>07 78 94 75 58</strong></span></a>
                 <div class="contact-detail"><span class="contact-detail__icon" aria-hidden="true">⌖</span><span><small>Localisation</small><strong>Pau, France — mobile</strong></span></div>
             </address>
-            <form class="contact-form" id="contact-form" action="api/contact.php" method="post">
+            <form class="contact-form" id="contact-form" method="post">
                 <div class="contact-form__top"><h2>Votre message</h2><span>Les champs marqués * sont requis</span></div>
-                <p class="contact-form__feedback" id="contact-status" role="status" aria-live="polite" hidden></p>
                 <div class="contact-form__fields">
-                    <div class="contact-field"><label for="contact-name">Nom / Prénom <span>*</span></label><input id="contact-name" name="name" type="text" placeholder="Votre nom" autocomplete="name" maxlength="150" required></div>
+                    <div class="contact-field"><label for="contact-name">Nom / Prénom <span>*</span></label><input id="contact-name" name="name" type="text" placeholder="Votre nom" autocomplete="name" minlength="2" maxlength="150" required></div>
                     <div class="contact-field"><label for="contact-email">Adresse e-mail <span>*</span></label><input id="contact-email" name="email" type="email" placeholder="votre.email@exemple.com" autocomplete="email" maxlength="254" required></div>
                     <div class="contact-field contact-field--full"><label for="contact-subject">Sujet</label><input id="contact-subject" name="subject" type="text" placeholder="Sujet de votre message" maxlength="180"></div>
-                    <div class="contact-field contact-field--full"><label for="contact-message">Message <span>*</span></label><textarea id="contact-message" name="message" rows="5" maxlength="8000" placeholder="Bonjour Ambre, je vous contacte pour..." required></textarea></div>
+                    <div class="contact-field contact-field--full"><label for="contact-message">Message <span>*</span></label><textarea id="contact-message" name="message" rows="5" minlength="10" maxlength="8000" placeholder="Bonjour Ambre, je vous contacte pour..." required></textarea></div>
                 </div>
-                <div class="contact-form__actions"><button class="button contact-form__submit" type="submit">Envoyer le message <span aria-hidden="true">→</span></button></div>
+                <div class="contact-form__honeypot" aria-hidden="true"><label for="contact-website">Ne pas remplir</label><input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                <div class="contact-form__actions"><button class="button contact-form__submit" type="submit"><span data-submit-label>Envoyer le message</span><span aria-hidden="true">→</span></button></div>
             </form>
+            <p class="contact-form__feedback" id="contact-status" role="status" aria-live="polite" hidden></p>
         </section>
         <aside class="contact-socials" aria-labelledby="social-title">
             <div class="contact-socials__heading"><p>En dehors de la boîte mail</p><h2 id="social-title">Retrouvons-nous<br>ailleurs<span>.</span></h2></div>

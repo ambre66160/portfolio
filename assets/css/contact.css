@@ -225,6 +225,10 @@
     margin-top: 1.3rem;
 }
 
+.contact-form__honeypot {
+    display: none !important;
+}
+
 .contact-form__submit {
     min-height: 3rem;
     flex: none;
@@ -233,8 +237,24 @@
     font-size: 0.7rem;
 }
 
+.contact-form__submit.is-loading::before {
+    display: inline-block;
+    width: 0.85rem;
+    height: 0.85rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    content: "";
+    animation: contact-submit-spin 700ms linear infinite;
+}
+
+@keyframes contact-submit-spin {
+    to { transform: rotate(360deg); }
+}
+
+.contact-form__feedback,
 .contact-form__status {
-    margin: 0;
+    margin: 0.8rem 0 0;
     color: var(--color-wine);
     font-size: 0.65rem;
     line-height: 1.5;
