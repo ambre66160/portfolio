@@ -905,6 +905,12 @@ html.has-custom-cursor .projects-page .project-card__visual .project-visual__dis
         font-size: 0.78rem;
     }
 
+    .projects-header--home .projects-nav__menu a,
+    .projects-header--home .projects-nav__menu a:hover,
+    .projects-header--home .projects-nav__menu a.active {
+        color: var(--color-ink);
+    }
+
     .projects-nav__menu a:last-child {
         border-bottom: 0;
     }

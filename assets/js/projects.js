@@ -130,14 +130,16 @@ function startTime(project) {
 	return year ? Date.UTC(Number(year[0]), 0, 1) : Infinity;
 }
 
-async function render(root, featuredOnly) {
+async function render(root, isHomePage) {
 	root.classList.add('is-loading');
 	root.setAttribute('aria-busy', 'true');
 	try {
 		const projects = [...(await getProjects())].sort((a, b) => startTime(a) - startTime(b));
-		const visibleProjects = featuredOnly ? projects.slice(-3) : projects;
+		const visibleProjects = isHomePage
+			? [...projects.filter((project) => project.slug === 'ekoroji'), ...projects.filter((project) => project.slug !== 'ekoroji')]
+			: projects;
 		const fragment = document.createDocumentFragment();
-		visibleProjects.forEach((project, index) => fragment.append(featuredOnly ? featuredCard(project) : projectListCard(project, index)));
+		visibleProjects.forEach((project, index) => fragment.append(isHomePage ? featuredCard(project) : projectListCard(project, index)));
 		root.replaceChildren(fragment);
 		root.classList.toggle('is-empty', visibleProjects.length === 0);
 		root.classList.remove('is-error');

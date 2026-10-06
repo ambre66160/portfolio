@@ -19,6 +19,7 @@ if (form instanceof HTMLFormElement && status) {
 		templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
 		publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 	};
+	const contactAddress = document.querySelector('.contact-details a[href^="mailto:"]')?.getAttribute('href');
 	let isSending = false;
 
 	const showStatus = (message, state = '') => {
@@ -86,7 +87,16 @@ if (form instanceof HTMLFormElement && status) {
 		}
 
 		if (!emailJs.serviceId || !emailJs.templateId || !emailJs.publicKey) {
-			showStatus('Le formulaire de contact est momentanément indisponible. Réessayez plus tard.', 'error');
+			if (!contactAddress) {
+				showStatus('L’adresse de contact est indisponible.', 'error');
+				return;
+			}
+			const mailtoParams = new URLSearchParams({
+				subject: values.subject || `Message de ${values.name}`,
+				body: `Nom : ${values.name}\nE-mail : ${values.email}\n\n${values.message}`,
+			});
+			showStatus('Votre messagerie va s’ouvrir avec votre message prérempli.');
+			window.location.href = `${contactAddress}?${mailtoParams.toString()}`;
 			return;
 		}
 
