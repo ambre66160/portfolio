@@ -135,9 +135,7 @@ async function render(root, isHomePage) {
 	root.setAttribute('aria-busy', 'true');
 	try {
 		const projects = [...(await getProjects())].sort((a, b) => startTime(a) - startTime(b));
-		const visibleProjects = isHomePage
-			? [...projects.filter((project) => project.slug === 'ekoroji'), ...projects.filter((project) => project.slug !== 'ekoroji')]
-			: projects;
+		const visibleProjects = isHomePage ? projects.slice(-3) : projects;
 		const fragment = document.createDocumentFragment();
 		visibleProjects.forEach((project, index) => fragment.append(isHomePage ? featuredCard(project) : projectListCard(project, index)));
 		root.replaceChildren(fragment);
