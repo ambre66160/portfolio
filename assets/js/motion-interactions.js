@@ -6,7 +6,7 @@ const revealSelector = '.section__eyebrow, .section__heading-row, .info-card, .p
 const magneticSelector = '.button, .social-card';
 const magneticSpring = { stiffness: 360, damping: 32, mass: 0.35 };
 const pointerSpring = { stiffness: 520, damping: 40, mass: 0.35 };
-const visualSelector = '.project-card__visual--image, .project-art--data';
+const visualSelector = '.project-card__visual--image, .project-art--data, .project-art--placeholder';
 
 function startMotionInteractions() {
 	const animatedElements = new WeakSet();
@@ -123,14 +123,20 @@ function startMotionInteractions() {
 		if (node.matches('.project-card__visual--image, .project-art--data')) prepareVisual(node);
 	}
 
+	function syncModalCursor() {
+		if (!cursor) return;
+		document.documentElement.classList.toggle('has-custom-cursor', !document.querySelector('dialog:modal'));
+	}
+
 	document.querySelectorAll(revealSelector).forEach(observeReveal);
 	document.querySelectorAll(magneticSelector).forEach(prepareMagnetic);
 	document.querySelectorAll('.project-card__visual--image, .project-art--data').forEach(prepareVisual);
 
 	const mutationObserver = new MutationObserver((records) => {
 		records.forEach(({ addedNodes }) => addedNodes.forEach(scan));
+		syncModalCursor();
 	});
-	mutationObserver.observe(document.body, { childList: true, subtree: true });
+	mutationObserver.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['open'] });
 
 	if (finePointer.matches) {
 		cursor = document.createElement('div');
