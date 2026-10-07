@@ -84,8 +84,11 @@ const cleanPageRoutes = {
         });
     },
     transformIndexHtml(html, context) {
-        if (!context.server) return html;
-        return html.replace('<head>', '<head>\n    <base href="/">');
+        const metadata = [
+            ...(context.server ? ['<base href="/">'] : []),
+            '<link rel="icon" type="image/svg+xml" href="favicon.svg">',
+        ].join('\n    ');
+        return html.replace('<head>', `<head>\n    ${metadata}`);
     },
     writeBundle() {
         Object.keys(pages).filter((name) => name !== 'index').forEach((name) => {
