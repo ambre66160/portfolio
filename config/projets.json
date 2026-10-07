@@ -37,7 +37,7 @@
   {
     "slug": "poc-echecs",
     "title": "Système de lecture de feuilles d'échecs (POC)",
-    "subtitle": "Évaluer la faisabilité de la lecture de feuilles de match manuscrites via l'IA.",
+    "subtitle": "Évaluer la faisabilité de la lecture de feuilles de partie manuscrites à l'aide de l'IA.",
     "role": "Développeuse Prototypage IA - Stage",
     "duration": "29/06/2026 - 14/08/2026",
     "technologies": ["Modèles VLM", "OCR", "Claude Opus 5", "Qwen3-VL"],
@@ -67,7 +67,7 @@
       },
       {
         "title": "Interface Homme-Machine",
-        "description": "Conception d'une interface soumettant uniquement les coups douteux à l'utilisateur humain."
+        "description": "Conception d'une interface soumettant uniquement les coups douteux à une validation humaine."
       }
     ],
     "code_snippet": "",
@@ -76,7 +76,7 @@
   {
     "slug": "jeux-python",
     "title": "Les jeux : Pixélisation & Casse-briques",
-    "subtitle": "Développement de jeux classiques et de devinette.",
+    "subtitle": "Développement de jeux classiques et d'un jeu de devinette.",
     "demo_url": "",
     "github_url": "https://github.com/ambre66160/petit-jeu",
     "role": "Développeuse",
@@ -123,13 +123,13 @@
       "Suivi de progression écologique pour les utilisateurs.",
       "Les utilisateurs peuvent rechercher des déchets spécifiques à l'aide d'un formulaire de recherche convivial et trouver des informations détaillées sur leur gestion, leur recyclage, leur réutilisation et leur élimination.",
       "Ekoroji offre également aux utilisateurs la possibilité de contribuer à la base de données en ajoutant des informations sur les déchets.",
-      " Ils peuvent ajouter, modifier ou supprimer les déchets existants pour maintenir la base de données à jour et pertinente.",
+      "Ils peuvent ajouter, modifier ou supprimer les déchets existants pour maintenir la base de données à jour et pertinente.",
       "Ekoroji propose des fonctionnalités de filtrage des résultats de recherche pour permettre aux utilisateurs de trouver des informations spécifiques en fonction du nom, de la description, etc. L'application fournit également des informations utiles sur les différentes options de gestion des déchets, telles que le tri et le recyclage.",
       "Elle fournit des informations fiables et précises sur les différents types de déchets, tout en permettant aux utilisateurs de contribuer à la base de données et de trouver des informations spécifiques selon leurs besoins. Ekoroji encourage les utilisateurs à adopter une approche responsable dans la gestion de leurs déchets et à contribuer à la protection de l'environnement."
     ],
     "context": "L'origine de ce projet découle du constat que de nombreuses personnes ne savent pas comment trier leurs déchets correctement, ce qui a un impact négatif sur l'environnement.",
-    "challenge": "Nous avons donc voulu créer une solution qui permettrait à chacun de devenir un écocitoyen responsable et de contribuer à la protection de notre planète.Ekoroji est une application web conçue pour simplifier la recherche et la gestion des déchets",
-    "solution": "Elle est construite en utilisant le framework Flask et l'API OpenAI pour fournir des informations précises et fiables dans l'ensemble sur les différents types de déchets. Vous pouvez voir une video de présentation via ce site https://peertube.lyceeconnecte.fr/w/tb2wkZo5HsmzzbVm4WcMRh ",
+    "challenge": "Nous avons donc voulu créer une solution qui permettrait à chacun de devenir un écocitoyen responsable et de contribuer à la protection de notre planète. Ekoroji est une application web conçue pour simplifier la recherche et la gestion des déchets.",
+    "solution": "Elle est construite à l'aide du framework Flask et de l'API OpenAI afin de fournir des informations fiables sur différents types de déchets. Une vidéo de présentation est disponible sur PeerTube : https://peertube.lyceeconnecte.fr/w/tb2wkZo5HsmzzbVm4WcMRh",
     "approach": [],
     "code_snippet": "",
     "next_project_slug": "parcheesi"
@@ -247,7 +247,7 @@
       "Espace sécurisé permettant l'ajout d'événements et de projets.",
       "Implémentation du modèle mathématique pour la gestion des probabilités dans le jeu."
     ],
-    "context": "Dans le cadre de l'élection des listes BDE, le pôle web devait concevoir un site internet et un jeu lié à l'univers de la liste « Paukerface ». Ce projet a été réaliser avec dautres personnes, notamment Fares Belkadi qui est le responsable du pôle web.",
+    "context": "Dans le cadre de l'élection des listes BDE, le pôle web devait concevoir un site internet et un jeu lié à l'univers de la liste « Paukerface ». Ce projet a été réalisé avec d'autres personnes, notamment Fares Belkadi, responsable du pôle web.",
     "challenge": "Assurer la cybersécurité du site web tout en fournissant des fonctionnalités d'administration dynamique.",
     "solution": "Développement d'un site en PHP intégrant un espace de connexion administrateur et des pages dédiées à la présentation de l'équipe et du programme.",
     "approach": [],
@@ -282,7 +282,7 @@
     "approach": [
       {
         "title": "Design UI/UX",
-        "description": "Elaboration d'une interface claire et dynamique personnalisable selon les préférences de l'utilisateur."
+        "description": "Élaboration d'une interface claire et dynamique, personnalisable selon les préférences de l'utilisateur."
       }
     ],
     "code_snippet": "",

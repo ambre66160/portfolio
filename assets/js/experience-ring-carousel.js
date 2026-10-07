@@ -9,10 +9,10 @@ const mod = (value, length) => ((value % length) + length) % length;
 const details = {
 	notipro: {
 		title: 'Stage Développeuse Full Stack & IA — NOTIPRO',
-		meta: 'Stagiaire Développeuse Full Stack, UI/UX & Vision par Ordinateur · Juin—Août 2026 · Pau',
+		meta: 'Stagiaire Développeuse Full Stack, UI/UX et vision par ordinateur · Juin—Août 2026 · Pau',
 		sections: [
 			['Application web gamifiée', ['Plateforme web d’entreprise avec mécaniques de gamification pour stimuler l’engagement utilisateur.', 'Conception du design system et intégration UI/UX responsive complète.']],
-			['Projet expérimental IA & échecs', ['Analyse et numérisation de feuilles de parties manuscrites avec vision par ordinateur.', 'Validation des scoresheets dans une boucle human-in-the-loop.']],
+			['Projet expérimental IA & échecs', ['Analyse et numérisation de feuilles de partie manuscrites avec des techniques de vision par ordinateur.', 'Validation des feuilles de partie avec intervention humaine.']],
 		],
 	},
 	dga: {

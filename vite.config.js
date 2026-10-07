@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { motionStudio } from 'motion-studio';
-import { copyFileSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { basename, dirname, resolve } from 'node:path';
 
 const IMAGE_PREFIX = 'assets/images/';
@@ -69,9 +69,38 @@ const pages = Object.fromEntries(
         .map((file) => [basename(file, '.html'), file]),
 );
 
+const cleanPageRoutes = {
+    name: 'clean-page-routes',
+    configureServer(server) {
+        const routeNames = new Set(Object.keys(pages).filter((name) => name !== 'index'));
+        server.middlewares.use((request, _response, next) => {
+            if (!request.url) return next();
+            const url = new URL(request.url, 'http://localhost');
+            const routeName = url.pathname.split('/').filter(Boolean).at(-1);
+            if (routeNames.has(routeName) && !url.pathname.endsWith('.html')) {
+                request.url = `${url.pathname.replace(/\/+$/, '')}.html${url.search}`;
+            }
+            next();
+        });
+    },
+    transformIndexHtml(html, context) {
+        if (!context.server) return html;
+        return html.replace('<head>', '<head>\n    <base href="/">');
+    },
+    writeBundle() {
+        Object.keys(pages).filter((name) => name !== 'index').forEach((name) => {
+            const outputPath = resolve('dist', `${name}.html`);
+            const routeIndex = resolve('dist', name, 'index.html');
+            const html = readFileSync(outputPath, 'utf8').replace('<head>', '<head>\n    <base href="../">');
+            mkdirSync(dirname(routeIndex), { recursive: true });
+            writeFileSync(routeIndex, html);
+        });
+    },
+};
+
 export default defineConfig({
     base: './',
-    plugins: [motionStudio(), copyProjectData, securityMetadata],
+    plugins: [motionStudio(), copyProjectData, securityMetadata, cleanPageRoutes],
     server: {
         host: '127.0.0.1',
         port: 5173,

@@ -17,7 +17,7 @@ const safeAssetUrl = (value) => {
 	}
 };
 
-const projectUrl = (slug) => `projet-detail.html?slug=${encodeURIComponent(slug)}`;
+const projectUrl = (slug) => `projet-detail/?slug=${encodeURIComponent(slug)}`;
 
 function technologyTags(technologies = []) {
 	const tags = element('div', 'tag-list');

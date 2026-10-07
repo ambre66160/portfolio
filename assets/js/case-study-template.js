@@ -32,7 +32,7 @@ const safeExternalUrl = (value) => {
 function updateMetadata(project, imageUrl) {
 	document.title = `${project.title} — Étude de cas | Ambre`;
 	document.querySelector('meta[name="description"]')?.setAttribute('content', project.subtitle || `Étude de cas du projet ${project.title}.`);
-	const canonicalUrl = new URL('projet-detail.html', document.baseURI);
+	const canonicalUrl = new URL('projet-detail/', document.baseURI);
 	canonicalUrl.searchParams.set('slug', project.slug);
 	document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl.href);
 	document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${project.title} — Étude de cas | Ambre`);
@@ -83,7 +83,7 @@ function renderHero(project, actions, lightbox) {
 	const section = createElement('section', 'case-hero');
 	const copy = createElement('div', 'case-hero__copy');
 	const back = createElement('a', 'case-back', '← Tous les projets');
-	back.href = 'projets.html';
+	back.href = 'projets/';
 	const heading = createElement('h1', 'case-hero__title', project.title);
 	const tagline = createElement('p', 'case-hero__tagline', project.subtitle || 'Une étude de cas, de l’idée aux choix techniques.');
 	copy.append(back, makeEyebrow(project.type || 'Étude de cas'), heading, tagline);
@@ -436,7 +436,7 @@ function renderNextProject(project, next) {
 	const banner = createElement('section', 'case-next-project');
 	banner.setAttribute('aria-labelledby', 'case-next-title');
 	const link = createElement('a', 'case-next-project__link');
-	link.href = `projet-detail.html?slug=${encodeURIComponent(next.slug)}`;
+	link.href = `projet-detail/?slug=${encodeURIComponent(next.slug)}`;
 	const title = createElement('h2', '', next.title);
 	title.id = 'case-next-title';
 	link.append(createElement('span', 'case-next-project__eyebrow', 'Projet suivant'), title, createElement('span', 'case-next-project__action', 'Découvrir le projet →'));
@@ -457,7 +457,7 @@ function renderNextProject(project, next) {
 }
 
 function updateStructuredData(project, imageUrl) {
-	const canonicalUrl = new URL('projet-detail.html', document.baseURI);
+	const canonicalUrl = new URL('projet-detail/', document.baseURI);
 	canonicalUrl.searchParams.set('slug', project.slug);
 	const script = document.createElement('script');
 	script.type = 'application/ld+json';
@@ -526,7 +526,7 @@ async function initializeCaseStudy() {
 		document.title = `${project.title} — Étude de cas | Ambre`;
 		document.body.classList.toggle('case-study--marmiton', project.slug === 'marmiton-numerique');
 		document.querySelector('meta[name="description"]')?.setAttribute('content', project.subtitle || `Étude de cas du projet ${project.title}.`);
-		const canonicalUrl = new URL('projet-detail.html', document.baseURI);
+		const canonicalUrl = new URL('projet-detail/', document.baseURI);
 		canonicalUrl.searchParams.set('slug', project.slug);
 		document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl.href);
 		document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${project.title} — Étude de cas | Ambre`);

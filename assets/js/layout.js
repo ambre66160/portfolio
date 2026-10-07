@@ -36,9 +36,10 @@ function initializeNavigation() {
 		if (event.key === 'Escape') closeMenu();
 	});
 
-	const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+	const routeName = (path) => new URL(path, document.baseURI).pathname.replace(/\/+$/, '').split('/').pop() || '';
+	const currentPath = routeName(window.location.pathname);
 	document.querySelectorAll('.projects-nav__menu a').forEach((link) => {
-		const linkPath = new URL(link.href).pathname.split('/').pop();
+		const linkPath = routeName(link.href);
 		if (linkPath === currentPath) {
 			link.classList.add('active');
 			link.setAttribute('aria-current', 'page');
