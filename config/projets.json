@@ -325,6 +325,60 @@
       }
     ],
     "code_snippet": "",
+    "next_project_slug": "pass-gestion-stages"
+  },
+  {
+    "slug": "pass-gestion-stages",
+    "title": "PASS — Plateforme de suivi des stages",
+    "subtitle": "Centraliser la recherche, le suivi et l’archivage des stages pour les étudiants et leurs encadrants.",
+    "role": "Développeuse PHP & gestion de projet (équipe de 4)",
+    "demo_url": "",
+    "github_url": "https://github.com/amiraTcne/Projet-dev-web",
+    "duration": "2025-2026",
+    "technologies": ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "JSON", "Bootstrap 5", "Bootstrap Icons", "Alpine.js 3", "PHPMailer 7", "Figma"],
+    "type": "Application Web",
+    "image_hero": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=75",
+    "image_hero_alt": "Équipe réunie autour d’une table de travail",
+    "image_hero_device": "desktop",
+    "image_banner": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=75",
+    "image_context": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=75",
+    "gallery": [],
+    "metrics": [
+      {
+        "value": "6",
+        "label": "espaces fonctionnels"
+      }
+    ],
+    "highlights": [
+      "Recherche et consultation d’offres de stage par compétences, avec dépôt de candidature et de documents.",
+      "Publication d’offres et gestion des conventions pour les entreprises partenaires.",
+      "Suivi de l’avancement des dossiers par les étudiants et validation des étapes par les tuteurs.",
+      "Consultation des rapports et validation finale des stages par les jurys.",
+      "Administration des utilisateurs, modération et suivi des journaux d’activité.",
+      "Archivage des informations pour assurer leur continuité entre les promotions."
+    ],
+    "context": "Développée en équipe dans le cadre du projet Dev Web ING1 à CY Tech en 2025-2026, PASS répond à la dispersion des recherches et propositions de stage. La plateforme centralise les offres, les dossiers et leur suivi afin de pérenniser les informations pour les promotions suivantes.",
+    "challenge": "Le défi consiste à coordonner les parcours de six espaces fonctionnels — étudiant, entreprise, tuteur, jury, administration et portail commun — tout en assurant le suivi administratif et pédagogique d’un dossier de stage.",
+    "solution": "Une application PHP reliée à une base MySQL regroupe les offres, les candidatures, les documents et les validations. Des espaces adaptés aux profils structurent les actions, tandis qu’une interface mobile-first facilite l’accès aux informations.",
+    "approach": [
+      {
+        "title": "Cadrage fonctionnel",
+        "description": "Analyse des besoins et définition des parcours pour les étudiants, entreprises, tuteurs, jurys et administrateurs."
+      },
+      {
+        "title": "Conception et données",
+        "description": "Maquettage de l’interface avec Figma et modélisation de la base de données MySQL."
+      },
+      {
+        "title": "Développement web",
+        "description": "Réalisation de l’interface HTML, CSS et JavaScript, avec Bootstrap et Alpine.js, puis des fonctionnalités serveur en PHP."
+      },
+      {
+        "title": "Organisation agile",
+        "description": "Travail en équipe selon une démarche Scrum, avec versionnage GitHub et planification par diagramme de Gantt."
+      }
+    ],
+    "code_snippet": "",
     "next_project_slug": null
   }
 ]
