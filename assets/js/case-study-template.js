@@ -20,8 +20,9 @@ const safeAssetUrl = (value) => {
 };
 
 const safeExternalUrl = (value) => {
+	if (typeof value !== 'string' || !value.trim()) return '';
 	try {
-		const url = new URL(value, document.baseURI);
+		const url = new URL(value);
 		return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
 	} catch {
 		return '';
