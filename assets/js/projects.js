@@ -11,7 +11,7 @@ const safeAssetUrl = (value) => {
 	if (typeof value !== 'string' || value === '') return '';
 	try {
 		const url = new URL(value, document.baseURI);
-		return url.origin === window.location.origin && ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+		return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
 	} catch {
 		return '';
 	}

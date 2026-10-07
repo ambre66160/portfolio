@@ -13,7 +13,7 @@ const SECURITY_POLICY = [
     "script-src 'self'",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
     "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:",
-    "img-src 'self' data: blob:",
+    "img-src 'self' https://images.unsplash.com data: blob:",
     "connect-src 'self' https://api.emailjs.com",
     "upgrade-insecure-requests",
 ].join('; ');
@@ -36,7 +36,9 @@ const copyProjectData = {
                     ...Object.entries(project)
                         .filter(([key]) => key.startsWith('image_'))
                         .map(([, value]) => value),
-                    ...(Array.isArray(project.gallery) ? project.gallery.map((item) => item.src) : []),
+                    ...(Array.isArray(project.gallery)
+                        ? project.gallery.map((item) => typeof item === 'string' ? item : item.src || item.url)
+                        : []),
                 ])
                 .filter((imagePath) => typeof imagePath === 'string' && imagePath.startsWith(IMAGE_PREFIX)),
         );

@@ -13,7 +13,7 @@ const safeAssetUrl = (value) => {
 	if (typeof value !== 'string' || !value) return '';
 	try {
 		const url = new URL(value, document.baseURI);
-		return url.origin === window.location.origin && ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+		return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
 	} catch {
 		return '';
 	}
@@ -292,13 +292,16 @@ function renderSkills(project) {
 
 function normalizeGallery(project) {
 	if (Array.isArray(project.gallery)) {
-		return project.gallery.map((item) => ({
-			src: safeAssetUrl(item.src || item.url),
-			alt: item.alt || `Capture du projet ${project.title}`,
-			caption: item.caption || item.alt || '',
-			kind: item.kind || 'screenshot',
-			device: ['mobile', 'tablet'].includes(item.device) ? item.device : 'desktop',
-		})).filter((item) => item.src);
+		return project.gallery.map((item) => {
+			const image = typeof item === 'string' ? { src: item } : item;
+			return {
+				src: safeAssetUrl(image?.src || image?.url),
+				alt: image?.alt || `Capture du projet ${project.title}`,
+				caption: image?.caption || image?.alt || '',
+				kind: image?.kind || 'screenshot',
+				device: ['mobile', 'tablet'].includes(image?.device) ? image.device : 'desktop',
+			};
+		}).filter((item) => item.src);
 	}
 	return [project.image_hero, project.image_context]
 		.filter((src, index, items) => src && items.indexOf(src) === index)
