@@ -196,7 +196,7 @@
     "duration": "2025",
     "technologies": [ "CSS", "PHP","Hack"],
     "type": "Application Web RH",
-    "image_hero": "assets/images/ALB1.png",
+    "image_hero": "assets/images/alb_logo.png",
     "image_hero_alt": "Interface de session administrateur ALB",
     "image_hero_device": "desktop",
     "image_banner": "assets/images/ALB1.png",
